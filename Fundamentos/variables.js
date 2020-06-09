@@ -29,6 +29,30 @@ var primer_nombre='Juan'; //underscore
 var PrimerNombre='Juan'; // pascal case
 var primernombre='Juan'; // no recomendado
 
+/* ----- let------- */
+/* let nombre='Juan';
+let producto='libro';
+
+let nombre;     
+
+let nombre='Juan', producto='libro';
+sigue las mismas reglas de var */
+
+/* let producto='Libro';
+let producto='Libro 1'; */
+/* error no se puede volver a declarar la misma variable
+se recomienda usar let cuando el valor puede cambiar de datos */
+
+let producto='Libro';
+    producto='Libro 1';
+/* -------const-------- */
+/* const producto1;
+producto1 ='libro'; */
+/* error este tipo de variable es una constante, se recomienda usar para valores que no cambiaran */
+   
+const producto1='libro';
+console.log(producto1);
+
 
 
 
