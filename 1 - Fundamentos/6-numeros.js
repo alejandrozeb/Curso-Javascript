@@ -52,7 +52,14 @@ puntaje=10
 10
 ++puntaje
 11 asgina antes y lo imprime
+de igual forma funciona el --
 */
+/* incremento en rango 
+puntaje=20
+20
+puntaje +=3
+23*/
+
 let puntaje;
 
 console.log(puntaje);
