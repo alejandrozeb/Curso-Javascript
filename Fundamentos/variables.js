@@ -49,13 +49,18 @@ let producto='Libro';
 /* const producto1;
 producto1 ='libro'; */
 /* error este tipo de variable es una constante, se recomienda usar para valores que no cambiaran */
-   
 const producto1='libro';
 console.log(producto1);
 
 
+/* por consola las respuestasn negras son cadenas y las azules con numeros */
 
+/* concatenar */
+let mensaje;
+mensaje= 'java'+'script';
+let aprediendo = 'apreniendo',
+    tecnologia = 'Javascript';
 
-
-
-console.log();
+/* console.log(aprediendo+' '+tecnologia); */
+console.log(`${aprediendo} ${tecnologia}`);
+/* nueva forma */
