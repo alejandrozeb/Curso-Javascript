@@ -20,7 +20,7 @@ valor=null;/* et devuelve un objeto */
 //symbol
 valor=Symbol('simbolo');
 
-//arreglos
+//arreglos -- 
 valor=[1,2,3,4];//devuelve un objeto
 //objetos
 valor={
