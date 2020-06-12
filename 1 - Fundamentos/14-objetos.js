@@ -62,4 +62,3 @@ for(let i=0;i<autos.length; i++ ){
     console.log(`${autos[i].modelo} ${autos[i].motor}`);
 }
 
-console.log(autos[0].modelo);
