@@ -53,3 +53,40 @@ console.log(meses);
 let arreglo1=[1,2,3],
     arreglo2=[9,8,7];
     console.log(arreglo1.concat(arreglo2));
+
+/* Ordenar un arreglo, en string ordena de a to z */
+
+const frutas = ['Platano','Manzana','Fresa','Naranja','Zanahoria'];
+frutas.sort();
+console.log(frutas);
+/* ordenar numeros */
+arreglo1=[3,4,6,7,8,9,11,38,67,89,21,34,57,1,2];
+arreglo1.sort(); //sale en orden extraña
+console.log(arreglo1);
+
+/*  para numeros */
+arreglo1=[3,4,6,7,8,9,11,38,67,89,21,34,57,1,2];
+arreglo1.sort(function(x,y){
+                return x-y;
+            });
+console.log(arreglo1);
+
+/* para la inversa */
+arreglo1=[3,4,6,7,8,9,11,38,67,89,21,34,57,1,2];
+arreglo1.sort(function(x,y){
+                return y-x;
+            });
+console.log(arreglo1);
+
+/* ordenar e manera implicita */
+var arrayNumbers = [10, 8, 9, 5, 3, 78, 23]
+
+Array.prototype.sortNumbers = function(){
+    return this.sort(
+        function(a,b){
+            return a - b
+        }
+    );
+}
+
+console.log(arrayNumbers.sortNumbers())
