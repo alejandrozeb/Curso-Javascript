@@ -1,4 +1,4 @@
-/* crear un arreglo */
+  /* crear un arreglo */
 //numeros enteres
 const numeros=[10,20,30,40,50];
 console.log(numeros);
@@ -89,4 +89,5 @@ Array.prototype.sortNumbers = function(){
     );
 }
 
-console.log(arrayNumbers.sortNumbers())
+console.log(arrayNumbers.sortNumbers()) 
+
