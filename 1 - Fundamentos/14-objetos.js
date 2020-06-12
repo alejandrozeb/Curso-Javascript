@@ -44,3 +44,22 @@ const persona2 = {
     /* para acceder a las propiedades del mismo objeto se coloca this */
 }
 console.log(persona2.nacimiento());
+/* ------ parte 2 ----------- */
+/* arrays de objetos */
+
+const autos=[
+    {modelo: 'mustang', motor:6.0},
+    {modelo: 'Camaro', motor:6.2},
+    {modelo: 'Challenger', motor:6.3},
+    ];
+/* froma de mostrar un atributo de un objeto, que esta en el array */
+console.log(autos[0].modelo);
+/* imprimir el array */
+
+for(let i=0;i<autos.length; i++ ){
+    console.log(autos[i]);
+    /* con literal */
+    console.log(`${autos[i].modelo} ${autos[i].motor}`);
+}
+
+console.log(autos[0].modelo);
