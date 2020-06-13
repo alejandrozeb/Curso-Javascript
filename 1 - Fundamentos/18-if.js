@@ -34,4 +34,32 @@ if (efectivo>totalcarrito) {
 }
 /* tambien se puede escribir sin llaves solo con identacion */
 
+/* elseIF */
+/* anidados, %mofdulo, && and,|| or ,** exponecial */
+/* else if, al lado del else va el if  */
+let hora=-3;
+
+if (hora>0 && hora<25 && hora <= 10) {
+    console.log('Buenos días');
+} else if(hora>0 && hora<25 && hora <=18){
+    console.log('Buenas tardes');
+}else if(hora>0 && hora<25 && hora <=24){
+    console.log('Buenas tardes');
+}
+else{
+    console.log('hora invalida');
+}
+
+/* forma de anidacion prefiero anidar por que tengo mas restricciones y control sobre los ifs*/
+if (hora <= 10) {
+    console.log('Buenos días1');
+} else {
+    if(hora <=18){
+        console.log('Buenas tardes2');
+    }
+    else{
+        console.log('Buenas noches3');
+    }
+}
+
 
