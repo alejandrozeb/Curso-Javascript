@@ -62,4 +62,20 @@ if (hora <= 10) {
     }
 }
 
+/* or || ejemplo */
+  efectivo=300;
+ let credito=400,
+    totalCarrito= 500;
+if (totalcarrito < efectivo || totalcarrito < credito) {
+    console.log('Puedo pagar');
+}else{
+    console.log('No puedo pagar');
+}
+
+/* ternario en una sola linea */
+
+const logueado=true;
+// sintaxis del ternario
+/* condicion ? true : false */
+console.log(logueado === true ? 'si se logue':'no se logueo');
 
