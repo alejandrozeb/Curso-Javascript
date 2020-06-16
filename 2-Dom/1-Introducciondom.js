@@ -11,3 +11,4 @@
             
         en h1 - texto - id - class podemos modificar todos estos elementos*/
 /* se puede seleccionar e ir de nodo en nodo */
+
