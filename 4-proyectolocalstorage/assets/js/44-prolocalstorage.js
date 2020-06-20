@@ -52,6 +52,10 @@ function borrarTweet(e){
             console.log('diste click en el boton x');
             e.target.parentElement.remove();
             alert('tweet eliminado');
+            //borando de localstorage
+            //tenemos que ingresar al texto y eliminar el ultimo caracter en este caso
+            //console.log(e.target.parentElement.innerText);
+            borrarTweetLocalStorage(e.target.parentElement.innerText);
     }
 }
 
@@ -102,4 +106,23 @@ function obtenerTweetsLocalStorage(){
     }
     return tweets
 }
+//eliminar tweet de local storage
 
+function borrarTweetLocalStorage(tweet){
+    //comprobando la comunicaion con el metodo
+    //console.log(tweet);
+    let tweets,tweetBorrar;
+    //elimina las x del tweet
+    tweetBorrar = tweet.substring(0, tweet.length - 1);
+    //console.log(tweetBorrar);
+    //borra el ultimo caracter
+    tweets = obtenerTweetsLocalStorage();
+    tweets.forEach(function(tweet,index){
+        //el index te regresa el numero donde estas en el arreglo
+        if(tweetBorrar===tweet){
+            tweets.splice(index,1);
+            //toma la poscion del arreglo y hasta donde
+        }
+        localStorage.setItem('tweets', JSON.stringify(tweets));
+    });
+}
