@@ -14,6 +14,8 @@ cargarEventListeners();
 function cargarEventListeners(){
     //dispara cuando se preiona "agregar carrito"
     cursos.addEventListener('click',comprarCurso);
+    //cuando se elimina un curso del carrito
+    carrito.addEventListener('click', eliminarCurso);
     
 }
 
@@ -68,4 +70,16 @@ function insertarCarrito(curso){
         `;
         listaCursos.appendChild(row);
         /* es un tr con elementos en el td que se agrega al tbody de el carrito */
+}
+//Elimina el curso del carrito del DOM
+function eliminarCurso(e){
+    /* e para poder acceder a prevent */
+    e.preventDefault();
+    let curso;
+    if(!e.target.classList.contains('borrar.curso')){
+        e.target.parentElement.parentElement.remove();
+    }
+    /* delegation es lo mas usado en esta seccion */
+
+    //console.log('eliminado');
 }
