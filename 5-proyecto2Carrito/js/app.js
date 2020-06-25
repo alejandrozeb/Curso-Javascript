@@ -1,14 +1,14 @@
-//variables
+//-----------variables
 const carrito= document.getElementById('carrito');
 const cursos = document.getElementById('lista-cursos');
+const listaCursos = document.querySelector('#lista-carrito tbody');
 
 
 
 
 
 
-
-//Listeners
+//----------Listeners
 cargarEventListeners();
 
 function cargarEventListeners(){
@@ -22,7 +22,7 @@ function cargarEventListeners(){
 
 
 
-//funciones
+//-------------funciones
 //funcion que añade el curso al carrito
 function comprarCurso(e){
     e.preventDefault();
@@ -41,5 +41,31 @@ function comprarCurso(e){
 //lee los datos del curso
 
 function leerdatosCurso(curso){
-    console.log(curso);
+    const infoCurso ={
+        imagen:curso.querySelector('img').src,
+        titulo: curso.querySelector('h4').textContent,
+        precio: curso.querySelector('.precio span').textContent,
+        id: curso.querySelector('a').getAttribute('data-id')
+    }
+
+    insertarCarrito(infoCurso);
+}
+function insertarCarrito(curso){
+    const row = document.createElement('tr');
+    row.innerHTML=`
+        <td>
+            <img src="${curso.imagen}" width=100 >
+        </td>
+        <td>
+            ${curso.titulo}">
+        </td>
+        <td>
+            ${curso.precio}">
+        </td>
+        <td>
+            <a href="#" class="borrar-curso" data-id="${curso.imagen}">X</a>
+        </td>    
+        `;
+        listaCursos.appendChild(row);
+        /* es un tr con elementos en el td que se agrega al tbody de el carrito */
 }
