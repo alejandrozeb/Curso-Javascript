@@ -2,8 +2,7 @@
 const carrito= document.getElementById('carrito');
 const cursos = document.getElementById('lista-cursos');
 const listaCursos = document.querySelector('#lista-carrito tbody');
-const vaciarCarritoBtn = document.getElementById('lista-carrito');
-console.log(vaciarCarritoBtn);
+const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 
 
 
@@ -51,7 +50,6 @@ function leerdatosCurso(curso){
         precio: curso.querySelector('.precio span').textContent,
         id: curso.querySelector('a').getAttribute('data-id')
     }
-
     insertarCarrito(infoCurso);
 }
 function insertarCarrito(curso){
@@ -72,19 +70,20 @@ function insertarCarrito(curso){
         `;
         listaCursos.appendChild(row);
         /* es un tr con elementos en el td que se agrega al tbody de el carrito */
+        //guardar curso local storage
+        guardarCursoLocalStorage(curso);
 }
 //Elimina el curso del carrito del DOM
 function eliminarCurso(e){
     /* e para poder acceder a prevent */
     e.preventDefault();
     let curso;
-    console.log(e.target.parentElement.target);
     if(e.target.classList.contains('borrar-curso')){
         e.target.parentElement.parentElement.remove();
     }
     /* delegation es lo mas usado en esta seccion */
     
-    console.log('eliminado');
+    //console.log('eliminado');
 }
 
 //elimina los cursos del carrito en el dom
@@ -96,7 +95,28 @@ function vaciarCarrito(){
     while(listaCursos.firstChild){
         listaCursos.removeChild(listaCursos.firstChild);
     }
+    return false;
+}
 
+//almacena cursoso en el carrito a local storage
 
+function guardarCursoLocalStorage(curso){
+    let cursos;
+    //toma el valor del localstorage
+    cursos = obtenerCursosLocalStorage();
+    //el curso seleccionado se agrega al arreglo
+    cursos.push(curso);
 
+    localStorage.setItem('cursos',JSON.stringify(cursos));
+}
+//compruba que haya elementos en el localstorage
+function obtenerCursosLocalStorage(){
+    let cursosLS;
+    //comprobamos si hay algo en el localStorage
+    if(localStorage.getItem('cursos') === null){
+        cursosLS = [];
+    }else{
+        cursosLS =JSON.parse( localStorage.getItem('cursos'));
+    }
+    return cursosLS;
 }
