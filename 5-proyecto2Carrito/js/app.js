@@ -2,8 +2,8 @@
 const carrito= document.getElementById('carrito');
 const cursos = document.getElementById('lista-cursos');
 const listaCursos = document.querySelector('#lista-carrito tbody');
-
-
+const vaciarCarritoBtn = document.getElementById('lista-carrito');
+console.log(vaciarCarritoBtn);
 
 
 
@@ -16,6 +16,8 @@ function cargarEventListeners(){
     cursos.addEventListener('click',comprarCurso);
     //cuando se elimina un curso del carrito
     carrito.addEventListener('click', eliminarCurso);
+    //al vaciar el carrito
+    vaciarCarritoBtn.addEventListener('click',vaciarCarrito);
     
 }
 
@@ -65,7 +67,7 @@ function insertarCarrito(curso){
             ${curso.precio}">
         </td>
         <td>
-            <a href="#" class="borrar-curso" data-id="${curso.imagen}">X</a>
+            <a href="#" class="borrar-curso" data-id="${curso.id}">X</a>
         </td>    
         `;
         listaCursos.appendChild(row);
@@ -76,10 +78,25 @@ function eliminarCurso(e){
     /* e para poder acceder a prevent */
     e.preventDefault();
     let curso;
-    if(!e.target.classList.contains('borrar.curso')){
+    console.log(e.target.parentElement.target);
+    if(e.target.classList.contains('borrar-curso')){
         e.target.parentElement.parentElement.remove();
     }
     /* delegation es lo mas usado en esta seccion */
+    
+    console.log('eliminado');
+}
 
-    //console.log('eliminado');
+//elimina los cursos del carrito en el dom
+
+function vaciarCarrito(){
+    //foma lenta
+   // listaCursos.innerHTML= '';
+    //return false
+    while(listaCursos.firstChild){
+        listaCursos.removeChild(listaCursos.firstChild);
+    }
+
+
+
 }
