@@ -42,5 +42,5 @@ maria.retirarSaldo(3000);
 console.log(maria.tipoCliente());
 console.log(maria.imprimirSaldo());
 console.log(Cliente.bienvenida());
-
-console.log(maria.bienvenida());
+//falla por el static
+/* console.log(maria.bienvenida()); */
