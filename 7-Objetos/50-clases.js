@@ -1,5 +1,5 @@
-/* Clases en Javascript */
-
+/* Clases en Javascript con emacscript 6*/
+//crear clase
 class Cliente {
 
     constructor (nombre, apellido, saldo){
@@ -7,7 +7,9 @@ class Cliente {
         this.apellido = apellido;
         this.saldo = saldo;
     }
+//al instanciar se crear este constuctor
 
+/* puedes colocar tus metodos que van a ser parte del prototype automaticamente */
     imprimirSaldo(){
         return `Hola ${this.nombre}, tu saldo es de: ${this.saldo}`;
     }
@@ -28,7 +30,7 @@ class Cliente {
     retirarSaldo(retiro){
         return this.saldo -= retiro;
     }
-    //este es un metodo
+    //este es un metodo estatico, no es necesario instanciar pero es neceario pasarle el nombre de la clase
     static bienvenida(){
         return `Bienvenido al cajero`;
     }

@@ -1,5 +1,5 @@
 /* Forma de crear un objeto, especificando de una vez con el proto*/
-
+/* puedes escoger las dos formas */
 //Object Create
 
 const Cliente ={
@@ -10,9 +10,9 @@ const Cliente ={
         return this.saldo -= retiro;
     }
 }
-
+// Crear el objeto pero esta vacio
 const mary = Object.create(Cliente);
-
+//llenando el objeto
 mary.nombre = 'Mary';
 mary.saldo = 1000;
 

@@ -20,7 +20,7 @@ const cliente = new Cliente('Pedro', 1000);
 console.log(cliente.imprimirSaldo());
 console.log(Cliente.bienvenida());
 
-/* jala de la clase cliente */
+/* Hereda de la clase todos los atributos y metodos cliente coon extends */
 class Empresa extends Cliente{
     // todos los atributos son heredados con extends
 
@@ -31,6 +31,7 @@ class Empresa extends Cliente{
         this.telefono = telefono;
         this.tipo = tipo;
     }
+    //para reescribir solo se tiene que colocar el mismo nombre
     static bienvenida(){
         return `Bienvenido al cajero para Empresas`;
     }
