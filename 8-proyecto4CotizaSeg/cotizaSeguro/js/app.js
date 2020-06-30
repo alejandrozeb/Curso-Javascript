@@ -29,6 +29,51 @@ Interfaz.prototype.mostrarError = function(mensaje, tipo){
         document.querySelector('.mensaje').remove();
     },3000);
 }
+Seguro.prototype.cotizarSeguro = function(){
+    //console.log(informacion);
+    // no es necesario guardar en una variable por que ya se guarda en el instancia
+   /*  console.log(this.marca);
+    console.log(this.anio);
+    console.log(this.tipo); */
+
+    /* 
+        1= americano 1.15
+        2 = asiatico 1.05
+        3 = europeo 1.35
+    */
+    let cantidad;
+    const base = 2000;
+
+    switch(this.marca){
+        case '1':
+            cantidad = base * 1.15;
+            break;
+        case '2':
+            cantidad = base * 1.05;
+            break;
+        case '3':
+            cantidad = base * 1.35;
+            break;
+    }
+   // console.log(cantidad);
+    //leer el año
+
+    const diferencia = new Date().getFullYear() - this.anio;
+   // console.log(diferencia);
+   /* cada año de diferencia hay que reducir el 3% del valor del seguro */
+   cantidad -= (diferencia*3)*cantidad/100;
+    /* si el seguro es barato se multiplica por 30% mas
+        si el seguro es completo se multiplica por 50% más */
+
+        if(this.tipo == 'basico'){
+            cantidad *= 1.30;
+        } else {
+            cantidad *= 1.50;
+        }
+    
+   return cantidad;
+    
+}
 
 
 //event listener
@@ -71,6 +116,13 @@ Interfaz.prototype.mostrarError = function(mensaje, tipo){
     }else{
         //Instanciar seguro y mostrar interfaz
        // console.log('Todo bien todo Correcto');
+
+       const seguro = new Seguro(marcaSeleccionada,anioSeleccionado,tipo);
+      // console.log(seguro);
+        //Cotizar el seguro
+
+        const cantidad = seguro.cotizarSeguro(seguro);
+        /* despues de obtener la cantidad debemos crear la interfaz */
     }
  });
 
