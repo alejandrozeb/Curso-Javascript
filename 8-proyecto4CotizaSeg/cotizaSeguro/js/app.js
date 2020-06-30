@@ -29,6 +29,44 @@ Interfaz.prototype.mostrarError = function(mensaje, tipo){
         document.querySelector('.mensaje').remove();
     },3000);
 }
+
+// imprime el resultado de la cotizacicon
+
+Interfaz.prototype.mostrarResultado = function(seguro,total){
+    const resultado = document.getElementById('resultado');
+    let marca;
+    //console.log(seguro);
+
+    switch(seguro.marca){
+        case '1':
+            marca='Americano';
+            break;
+        case '2':
+            marca='Asiatico';
+            break;
+        case '3':
+            marca='Europeo';
+            break;
+    }
+    //crear un div
+    const div = document.createElement('div');
+    //insertar la información
+
+    div.innerHTML=`
+        <p> Tu Resumen: </p>
+        <p> Marca: ${marca} </p>
+        <p> Año: ${seguro.anio} </p>
+        <p> tipo: ${seguro.tipo} </p>
+        <p> Total: ${total} </p>
+    `;
+
+    resultado.appendChild(div);
+}
+
+
+
+
+//calcula el seguro lo devuelve en una variable
 Seguro.prototype.cotizarSeguro = function(){
     //console.log(informacion);
     // no es necesario guardar en una variable por que ya se guarda en el instancia
@@ -123,6 +161,7 @@ Seguro.prototype.cotizarSeguro = function(){
 
         const cantidad = seguro.cotizarSeguro(seguro);
         /* despues de obtener la cantidad debemos crear la interfaz */
+        interfaz.mostrarResultado(seguro,cantidad);
     }
  });
 
