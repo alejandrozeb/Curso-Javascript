@@ -1,6 +1,63 @@
 // Cotizador Constructor
 // Cada vez que se presione el boton cotizar se lanza la funcion 
-function Seguro(){}
+function Seguro(marca,anio,tipo){
+    this.marca = marca;
+    this.anio = anio;
+    this.tipo = tipo;
+
+}
+//este objeto manejara las view estara vacio al principio pero lo llenaremos con prototypes
+//Todo lo que se muestra
+function Interfaz(){
+
+}
+
+
+//event listener
+
+//al realizar el event submit del form
+ const formulario = document.getElementById('cotizar-seguro');
+
+ formulario.addEventListener('submit',function (e) {
+    e.preventDefault();
+    
+    //leer la marca seleccionada del select
+    const marca = document.getElementById('marca');
+    /* seleccionamos el select de marcas en el form */
+    const marcaSeleccionada = marca.options[marca.selectedIndex].value;
+    /* selecionamos de la marca el value del cual se hizo la seleccion en el form*/
+   // console.log(marcaSeleccionada);
+
+   /* leer el año seleccionado del <select>*/
+    const anio = document.getElementById('anio');
+    /* en el value sale el año por que lo guarde con el numero de años */
+    const anioSeleccionado= anio.options[anio.selectedIndex].value;
+    //console.log(anioSeleccionado);
+
+    /* Lee el valor del radio button */
+    //para tipo ckeck
+    const tipo = document.querySelector('input[name="tipo"]:checked').value;
+    //console.log(tipo);
+    console.log('presionado');
+
+    //Crear instancia de interfaz
+    const interfaz = new Interfaz();
+
+    //revisamos que los campos no esten vacios
+
+    if(marcaSeleccionada === '' || anioSeleccionado === '' || tipo === ''){
+        //Interfaz imprimiendo un error
+        console.log('Faltan datos');
+    }else{
+        //Instanciar seguro y mostrar interfaz
+        console.log('Todo bien todo Correcto');
+    }
+ });
+
+
+
+
+
 /* inicio selec de años */
 //Para llenar los select del año
 
