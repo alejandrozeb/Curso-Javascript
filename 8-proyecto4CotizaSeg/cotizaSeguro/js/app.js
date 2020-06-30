@@ -8,8 +8,26 @@ function Seguro(marca,anio,tipo){
 }
 //este objeto manejara las view estara vacio al principio pero lo llenaremos con prototypes
 //Todo lo que se muestra
-function Interfaz(){
+function Interfaz(){}
 
+//mensaje que se imprime en el HTML
+
+Interfaz.prototype.mostrarError = function(mensaje, tipo){
+    const div = document.createElement('div');
+
+    /* aumentamos estas clases para adicionar el css en el div */
+    if(tipo === 'error'){
+        div.classList.add('mensaje','error');
+    }else{
+        div.classList.add('mensaje','correcto');
+    }
+    div.innerHTML = `${mensaje}`;
+    /* inserta un elemento antes de otro */
+    formulario.insertBefore(div, document.querySelector('.form-group'));
+    /* eliminamos el mensaje despues de un tiempo */
+    setTimeout(function(){
+        document.querySelector('.mensaje').remove();
+    },3000);
 }
 
 
@@ -47,10 +65,12 @@ function Interfaz(){
 
     if(marcaSeleccionada === '' || anioSeleccionado === '' || tipo === ''){
         //Interfaz imprimiendo un error
-        console.log('Faltan datos');
+        //console.log('Faltan datos');
+
+        interfaz.mostrarError('Faltan datos, revisar el formulario y prueba de nuevo','error');
     }else{
         //Instanciar seguro y mostrar interfaz
-        console.log('Todo bien todo Correcto');
+       // console.log('Todo bien todo Correcto');
     }
  });
 
