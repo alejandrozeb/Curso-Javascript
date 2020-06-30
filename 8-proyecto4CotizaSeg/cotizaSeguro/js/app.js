@@ -12,7 +12,7 @@ function Interfaz(){}
 
 //mensaje que se imprime en el HTML
 
-Interfaz.prototype.mostrarError = function(mensaje, tipo){
+Interfaz.prototype.mostrarMensaje = function(mensaje, tipo){
     const div = document.createElement('div');
 
     /* aumentamos estas clases para adicionar el css en el div */
@@ -51,16 +51,22 @@ Interfaz.prototype.mostrarResultado = function(seguro,total){
     //crear un div
     const div = document.createElement('div');
     //insertar la información
-
+    //la clase header tiene estilos
     div.innerHTML=`
-        <p> Tu Resumen: </p>
+        <p class='header'> Tu Resumen: </p>
         <p> Marca: ${marca} </p>
         <p> Año: ${seguro.anio} </p>
         <p> tipo: ${seguro.tipo} </p>
-        <p> Total: ${total} </p>
+        <p> Total: $ ${total} </p>
     `;
-
-    resultado.appendChild(div);
+    //spinner
+    const spinner = document.querySelector('#cargando img');
+    spinner.style.display = 'block';
+    setTimeout(function(){
+        spinner.style.display = 'none';
+        resultado.appendChild(div);
+    },3000);
+   
 }
 
 
@@ -150,8 +156,15 @@ Seguro.prototype.cotizarSeguro = function(){
         //Interfaz imprimiendo un error
         //console.log('Faltan datos');
 
-        interfaz.mostrarError('Faltan datos, revisar el formulario y prueba de nuevo','error');
+        interfaz.mostrarMensaje('Faltan datos, revisar el formulario y prueba de nuevo','error');
     }else{
+        //Limpiar resultados anteriores
+        const resultados=document.querySelector('#resultado div');
+
+        if(resultados != null){
+            resultados.remove();
+        }
+
         //Instanciar seguro y mostrar interfaz
        // console.log('Todo bien todo Correcto');
 
@@ -162,6 +175,7 @@ Seguro.prototype.cotizarSeguro = function(){
         const cantidad = seguro.cotizarSeguro(seguro);
         /* despues de obtener la cantidad debemos crear la interfaz */
         interfaz.mostrarResultado(seguro,cantidad);
+        interfaz.mostrarMensaje('Cotizando...','exito');
     }
  });
 
