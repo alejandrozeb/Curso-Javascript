@@ -81,6 +81,26 @@ class Interfaz{
        // console.log(presupuestoRestanteUsuario);
 
        restante.innerHTML = `${presupuestoRestanteUsuario}`;
+       this.comprobarPresupuesto();
+    }
+
+    //cambia de color el presupuesto restante
+
+    comprobarPresupuesto(){
+       // console.log(cantidadPresupuesto);
+        const presupuestoTotal= cantidadPresupuesto.presupuesto;
+        const presupuestoRestante = cantidadPresupuesto.restante;
+        //comprobar el 25%
+        if((presupuestoTotal/4) > presupuestoRestante){
+            const restante = document.querySelector('.restante');
+            restante.classList.remove('alert-success', 'alert-warning');
+            restante.classList.add('alert-danger');
+        }else if((presupuestoTotal/2) > presupuestoRestante){
+            /* comprueba el 50% */
+            const restante = document.querySelector('.restante');
+            restante.classList.remove('alert-success');
+            restante.classList.add('alert-warning');
+        }
     }
 
 }
