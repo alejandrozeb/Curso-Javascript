@@ -49,7 +49,26 @@ class Interfaz{
         setTimeout(function(){
             document.querySelector('.primario .alert').remove();
             formulario.reset();
-        },3000);
+        },550000);
+    }
+    //Inserta los gastos a la lista
+    agregarGastoListado(nombre,cantidad){
+        console.log('asdasd');
+        //tenemos un div con id gasto que contiene un ul 
+        const gastosListado = document.querySelector('#gastos ul');
+
+        //Crear li
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+        //insertar el gasto
+        li.innerHTML= `
+            ${nombre}:
+            <span class='badge-primary badge-pill'> $ ${cantidad} </span>
+        `;
+
+        //insertar al HTML
+        gastosListado.appendChild(li);
     }
 }
 
@@ -93,7 +112,8 @@ formulario.addEventListener('submit', function(e){
         //dos parametros: mensaje y tipo
         ui.imprimirMensaje('Hubo un error', 'error');
     }else{
-
-        console.log('el gasto se agrego');
+        //insertar en el html el mensaje correcto
+        ui.imprimirMensaje('Correcto', 'correcto');
+        ui.agregarGastoListado(nombreGasto,cantidadGasto);
     }
 });
