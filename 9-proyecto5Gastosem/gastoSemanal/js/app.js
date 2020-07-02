@@ -5,7 +5,7 @@
 /* regresa el numero del presupuesto si no ingresa devuelve null o vacio */
 const presupuestoUsuario = prompt('Cual es tu presupuesto Semanal');
 const formulario = document.getElementById('agregar-gasto');
-let ccantidadPresupuesto;
+let cantidadPresupuesto;
 //Clases
 class Presupuesto{
     constructor(presupuesto){
@@ -49,11 +49,11 @@ class Interfaz{
         setTimeout(function(){
             document.querySelector('.primario .alert').remove();
             formulario.reset();
-        },550000);
+        },5000);
     }
     //Inserta los gastos a la lista
     agregarGastoListado(nombre,cantidad){
-        console.log('asdasd');
+       // console.log('asdasd');
         //tenemos un div con id gasto que contiene un ul 
         const gastosListado = document.querySelector('#gastos ul');
 
@@ -70,6 +70,19 @@ class Interfaz{
         //insertar al HTML
         gastosListado.appendChild(li);
     }
+
+    //Comprueba el presupuesto restante
+    presupuestoRestante(cantidad){
+        //en el div restante
+        const restante = document.querySelector('span#restante');
+        /* cantidad presupuesto esta disponible en todo el documento */
+        const presupuestoRestanteUsuario = cantidadPresupuesto.presupuestoRestante(cantidad);
+        /* Es el metodo que esta en el objeto Presupuesto */
+       // console.log(presupuestoRestanteUsuario);
+
+       restante.innerHTML = `${presupuestoRestanteUsuario}`;
+    }
+
 }
 
 //Event Listeners
@@ -84,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(isNaN(cantidadPresupuesto.presupuesto)){
             window.location.reload();
         }else{
-            console.log(cantidadPresupuesto);
+            //console.log(cantidadPresupuesto);
         //Instanciar la clase de Interfaz
 
         const ui = new Interfaz();
@@ -115,5 +128,6 @@ formulario.addEventListener('submit', function(e){
         //insertar en el html el mensaje correcto
         ui.imprimirMensaje('Correcto', 'correcto');
         ui.agregarGastoListado(nombreGasto,cantidadGasto);
+        ui.presupuestoRestante(cantidadGasto);
     }
 });
