@@ -38,8 +38,44 @@ function cargarNombres(e){
   }
  
   
-  console.log(url);
+ // console.log(url);
 
+  //conectar con ajax
+  // Inciar xmlhttp
+  
+  const xhr = new XMLHttpRequest();
+  // abrimos la conexion
+  xhr.responseXML('get',url, true);
+  // datos e impresion del template
+  xhr.onload = function(){
+    if(this.status === 200){
+        //console.log(this.responseText);
+        JSON.parse(this.responseText);
+        const nombre = JSON.parse(this.responseText);
+        //generar html
+
+        let htmlNombres = '<h2> Nombres Generados </h2>';
+
+        htmlNombres += '<ul class="lista">';
+
+        //imprimir cada nombre
+
+        nombres.forEach(function(nombre) {
+              htmlNombres= `
+                <li> ${nombre.name}
+              `;  
+        });
+
+
+
+        htmlNombres += '</ul>';
+
+        document.getElementById('resultado').innerHTML= htmlNombres;
+    }
+  }
+
+  //enviar el request
+  xhr.send();
 
 
   
