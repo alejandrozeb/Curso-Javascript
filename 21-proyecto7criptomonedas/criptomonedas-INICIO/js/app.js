@@ -1,0 +1,1 @@
+/* crear una cuneta https://www.cryptocompare.com/cryptopian/api-keys luego entrar a tu perfil y visitar la pestaña apikeys */
