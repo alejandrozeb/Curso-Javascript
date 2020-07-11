@@ -1,8 +1,11 @@
 /* crear una cuneta https://www.cryptocompare.com/cryptopian/api-keys luego entrar a tu perfil y visitar la pestaña apikeys */
 /* el app,js e sla conexin entre api.js y ui.js */
 
+// instancia vista de ui.js
+/* const ui = new Interfaz();
+ui.mostrarMensaje('texto','clase');
+ */
 // Leer formulario
-
 const formulario = document.querySelector('#formulario');
 
 formulario.addEventListener('submit', (e) => {
@@ -21,6 +24,8 @@ formulario.addEventListener('submit', (e) => {
     console.log(criptoMonedaSeleccionada);
     if(monedaSeleccionada === '' || criptoMonedaSeleccionada === ''){   
         // arrojar un error con un alert
+        const ui = new Interfaz();
+        ui.mostrarMensaje('ambos campos son obligatorios','alert bg-danger text-center');//clases de bootstrap
     }else{
         //todo bien una alerta de error
         console.log();
