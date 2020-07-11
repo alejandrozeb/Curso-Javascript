@@ -1,5 +1,22 @@
 /* desde aqui veremos la interfaz */
 class Interfaz{
+    /* no se recomienda tener un constructor cargado */
+    constructor(){
+        this.init();
+    }
+    /* asi que creamos una funcion donde podmos cargar sin problema */
+
+    init(){
+        this.construirSelect();//llama al metodo y lo ejecuta
+    }
+
+    /* crea los selects */
+   construirSelect(){
+       cotizador.obtenerMonedasAPI()
+        .then(monedas => {
+            console.log(monedas);
+        })
+   }
     /* servira para mostrar varios mensajes, este es general */
     /* crea un div con un mensaje y agrega una clase */
     mostrarMensaje(mensaje,clases){

@@ -5,6 +5,10 @@
 /* const ui = new Interfaz();
 ui.mostrarMensaje('texto','clase');
  */
+const cotizador=new API('6fc3ff8d794b10cc71e524a0ea221287059b9904a7401d74db6e1d3b7fe4712a');
+const ui = new Interfaz();
+
+/* cotizador.obtenerMonedasAPI(); este cotizador ira a la interfaz*/
 // Leer formulario
 const formulario = document.querySelector('#formulario');
 
@@ -24,7 +28,6 @@ formulario.addEventListener('submit', (e) => {
     console.log(criptoMonedaSeleccionada);
     if(monedaSeleccionada === '' || criptoMonedaSeleccionada === ''){   
         // arrojar un error con un alert
-        const ui = new Interfaz();
         ui.mostrarMensaje('ambos campos son obligatorios','alert bg-danger text-center');//clases de bootstrap
     }else{
         //todo bien una alerta de error
