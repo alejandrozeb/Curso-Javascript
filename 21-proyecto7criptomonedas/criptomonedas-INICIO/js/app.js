@@ -32,7 +32,10 @@ formulario.addEventListener('submit', (e) => {
     }else{
         //todo bien, consultar a la api
         cotizador.obtenerValores(monedaSeleccionada,criptoMonedaSeleccionada)
-            .then(data => console.log(data))
+            .then(data => {
+                //console.log(data);
+                ui.mostrarResultado(data.resultado.RAW, monedaSeleccionada, criptoMonedaSeleccionada);
+            })
             /* devuelve dos datos dispplay con comillas (cadenas) y raw que son los valores enteros (tipo num) */
 
         

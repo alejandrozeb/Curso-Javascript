@@ -54,4 +54,10 @@ class Interfaz{
             document.querySelector('.mensajes div').remove();
         }, 3000);
     }
+    //imprime el resultado de la cotizacion
+
+        /* la api devuel un objeto y su key es el nombre de la criptomoneda con otro objeto con el nombre GBP*/
+    mostrarResultado(resultado, moneda, crypto){
+        console.log(resultado[crypto][moneda]);//asi accedes al valor de los objetos en js, manera dinamica de accede a los datos
+    }
 }
