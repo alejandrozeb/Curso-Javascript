@@ -18,9 +18,18 @@ class Interfaz{
             //usaremos object entries, devuelve la llave y el valor y los retorna como arreglo
             //el key de cada moneda es el nombre
             
-            //for para object entries
+            //for para object entries, of es un operador relativamente nuevo
+
+            //crear un select de opciones
+            const select = document.querySelector('#criptomoneda');
+            //iterar por los resultados de la api
             for( const[key,value] of Object.entries(monedas.monedas.Data)){//se tiene que pasar el key y value, si no dara error
-                console.log(value);
+               //console.log(value);
+                //añadir el symbol y el nombre como opciones
+                const opcion = document.createElement('option');
+                opcion.value= value.Symbol;//añade como calue el nombre de la moneda
+                opcion.appendChild(document.createTextNode(value.CoinName));//añade el texto del value al option
+                select.appendChild(opcion);//añade cada option al select
             }
             
         })
