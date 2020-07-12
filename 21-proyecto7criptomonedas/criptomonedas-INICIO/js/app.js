@@ -30,7 +30,11 @@ formulario.addEventListener('submit', (e) => {
         // arrojar un error con un alert
         ui.mostrarMensaje('ambos campos son obligatorios','alert bg-danger text-center');//clases de bootstrap
     }else{
-        //todo bien una alerta de error
-        console.log();
+        //todo bien, consultar a la api
+        cotizador.obtenerValores(monedaSeleccionada,criptoMonedaSeleccionada)
+            .then(data => console.log(data))
+            /* devuelve dos datos dispplay con comillas (cadenas) y raw que son los valores enteros (tipo num) */
+
+        
     }
 });
