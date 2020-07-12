@@ -14,7 +14,15 @@ class Interfaz{
    construirSelect(){
        cotizador.obtenerMonedasAPI()
         .then(monedas => {
-            console.log(monedas);
+            /* trae el data de la api no se puede recorrer con un foreachpor que es un objeto*/
+            //usaremos object entries, devuelve la llave y el valor y los retorna como arreglo
+            //el key de cada moneda es el nombre
+            
+            //for para object entries
+            for( const[key,value] of Object.entries(monedas.monedas.Data)){//se tiene que pasar el key y value, si no dara error
+                console.log(value);
+            }
+            
         })
    }
     /* servira para mostrar varios mensajes, este es general */
