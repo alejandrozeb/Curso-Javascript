@@ -59,6 +59,18 @@ class Interfaz{
         /* la api devuel un objeto y su key es el nombre de la criptomoneda con otro objeto con el nombre GBP*/
     mostrarResultado(resultado, moneda, crypto){
         //console.log(resultado[crypto][moneda]);//asi accedes al valor de los objetos en js es la  manera dinamica de acceder a los datos
+        
+        //en caso que exista un caso anterior
+        const resultadoAnterior= document.querySelector('#resultado > div');
+        if(resultadoAnterior){
+            resultadoAnterior.remove();
+        }
+
+
+
+
+
+
 
         const datosMoneda = resultado[crypto][moneda];
         //recortar digitos de precio
@@ -67,7 +79,7 @@ class Interfaz{
             porcentaje = datosMoneda.CHANGEPCTDAY.toFixed(2),
         //para la fecha tenmos que convertir de numeros a la fecha es un time que maneja unix
         actualizado = new Date(datosMoneda.LASTUPDATE * 1000).toLocaleDateString('es-MX');
-        //para localizar tu hora es tolocate
+        //para cambiar el formato de fecha tu hora es tolocate
 
         //construir el template
          let templateHTML=`
@@ -80,8 +92,20 @@ class Interfaz{
                 </div>
             </div>
          `;
-        //insertar el resultado
 
-        document.querySelector('#resultado').innerHTML= templateHTML;
+           this.mostrarOcultarSpinner('block');
+         
+        setTimeout(() => {
+            //insertar el resultado
+            document.querySelector('#resultado').innerHTML= templateHTML;    
+            //ocultar
+            this.mostrarOcultarSpinner('none');
+        }, 3000);
+        
+    }
+    ////mostrar spinner de carga
+    mostrarOcultarSpinner(vista){
+        const spinner =  document.querySelector('.contenido-spinner');
+        spinner.style.display = vista;
     }
 }
