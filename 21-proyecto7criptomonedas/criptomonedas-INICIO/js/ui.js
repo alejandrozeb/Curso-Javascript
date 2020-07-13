@@ -58,6 +58,24 @@ class Interfaz{
 
         /* la api devuel un objeto y su key es el nombre de la criptomoneda con otro objeto con el nombre GBP*/
     mostrarResultado(resultado, moneda, crypto){
-        console.log(resultado[crypto][moneda]);//asi accedes al valor de los objetos en js, manera dinamica de accede a los datos
+        //console.log(resultado[crypto][moneda]);//asi accedes al valor de los objetos en js es la  manera dinamica de acceder a los datos
+
+        const datosMoneda = resultado[crypto][moneda];
+        //recortar digitos de precio
+        let precio = datosMoneda.PRICE.toFixed(2);//dosdigitos despues del punto
+
+
+        //construir el template
+         let templateHTML=`
+            <div class="card bg-warning">
+                <div class="card-body text-light">
+                    <h2 card="card-title">Resultado: </h2>
+                    <p> EL precio de ${datosMoneda.FROMSYMBOL} a moneda ${datosMoneda.TOSYMBOL} es de: $ ${precio}
+                </div>
+            </div>
+         `;
+        //insertar el resultado
+
+        document.querySelector('#resultado').innerHTML= templateHTML;
     }
 }
