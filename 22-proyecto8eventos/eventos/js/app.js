@@ -24,7 +24,13 @@ document.getElementById('buscarBtn').addEventListener('click', (e) =>{
     //revisar que haya algo escrito en el buscador
 
     if(textoBuscador != ''){//verifico si esta vacio
-        console.log('buscando ...');
+        //cuando si hya busqueda
+        //console.log('buscando ...');
+
+        eventbrite.obtenerEventos(textoBuscador, categoriaeleccionada).then(eventos => {
+            console.log(eventos);
+        })
+
     }else{
         //console.log('no hay nada');
         //Mostrar mensaje para que imprima algo
