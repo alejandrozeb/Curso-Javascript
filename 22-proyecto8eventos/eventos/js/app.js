@@ -1,4 +1,4 @@
 //controlador
 
-const eventBride = new EventBrite();
+const eventbrite = new EventBrite();
 const ui = new Interfaz();
