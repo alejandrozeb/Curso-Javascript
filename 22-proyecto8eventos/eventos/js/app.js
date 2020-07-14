@@ -24,8 +24,10 @@ document.getElementById('buscarBtn').addEventListener('click', (e) =>{
     //revisar que haya algo escrito en el buscador
 
     if(textoBuscador != ''){//verifico si esta vacio
-        console.log(buscnado);
+        console.log('buscando ...');
     }else{
-        console.log('no hay nada');
+        //console.log('no hay nada');
+        //Mostrar mensaje para que imprima algo
+        ui.mostrarMensaje('Escribe algo en el buscador', 'alert alert-danger mt-4');
     }
 } )
