@@ -31,8 +31,8 @@ document.getElementById('buscarBtn').addEventListener('click', (e) =>{
             //console.log(eventos);
             if(eventos.eventos.events.length > 0){
                 /* si hay eventos, mostrar el resultado */
-
-                ui.mostrarEventos(data.eventos);
+                ui.limpiarResultados();
+                ui.mostrarEventos(eventos.eventos);
 
 
             }else{
