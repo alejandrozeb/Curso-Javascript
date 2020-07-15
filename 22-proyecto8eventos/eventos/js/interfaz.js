@@ -34,6 +34,10 @@ class Interfaz{
             });
         })
     }
+    //lee la respuesta de la api e imprime los resultados
+
+
+
 
     //metodo para imprimir mensajes: 2 parametros, mensaje y clases
 

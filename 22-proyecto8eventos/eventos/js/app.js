@@ -28,7 +28,17 @@ document.getElementById('buscarBtn').addEventListener('click', (e) =>{
         //console.log('buscando ...');
 
         eventbrite.obtenerEventos(textoBuscador, categoriaeleccionada).then(eventos => {
-            console.log(eventos);
+            //console.log(eventos);
+            if(eventos.eventos.events.length > 0){
+                /* si hay eventos, mostrar el resultado */
+
+                ui.mostrarEventos(data.eventos);
+
+
+            }else{
+                /* no hay eventos enviar una alerta*/
+                ui.mostrarMensaje('No hoya resultados', 'alert alert-danger mt-4');
+            }
         })
 
     }else{
