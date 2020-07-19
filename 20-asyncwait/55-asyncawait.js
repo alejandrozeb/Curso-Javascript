@@ -1,5 +1,5 @@
 /* funciones asincronas, no esta soportado en todos los navegadores nuevo en emascript 7 */
-
+/* aync await espera que se carguen o se ejecute cierto codigo para empezar a ejecutar el siguiente */
 //ASYNC AWAIT
 
 async function obtenerClientes(){

@@ -1,21 +1,17 @@
-class UI {
-    constructor() {
+class API{
+    async obtenerDatos(){
+        //obtner los datos
 
-         // Iniciar el mapa
-         this.mapa = this.inicializarMapa();
+        //para obtener un numeros de paginas de respuesta
+        const total = 11000;
+        const datos = await fetch(`https://api.datos.gob.mx/v1/precio.gasolina.publico?pageSize=${total}`);
 
-    }
+        //retornar los datos como json
 
-    inicializarMapa() {
-         // Inicializar y obtener la propiedad del mapa
-         const map = L.map('mapa').setView([19.390519, -99.3739778], 6);        //indica en que div se va a colocar el mapa, ademas defines la latitud y longitud donde se inicialiara el mapa y el 6 es el zoom con el que comienza
-         const enlaceMapa = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-         L.tileLayer(
-             'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-             attribution: '&copy; ' + enlaceMapa + ' Contributors',//es el codigo de abajo
-             maxZoom: 18,//max zoom del mapa
-             }).addTo(map);
-         return map;
+        const respuestaJSON = await datos.json();
 
+        return {
+            respuestaJSON
+        }
     }
 }
