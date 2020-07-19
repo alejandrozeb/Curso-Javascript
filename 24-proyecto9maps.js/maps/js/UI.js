@@ -51,12 +51,21 @@ class UI {
             //debe llamarse igual para que funcione bien
             const {latitude,longitude,calle,regular,premium}=dato;
 
+            //creando un popup (el mensaje en el globo con información)
+
+            const opcionesPopUp= L.popup()  //setConten es una funcion propia de leaf
+                .setContent(`       
+                    <p>Calle: ${calle}</p>
+                    <p><b>Regular:</b> $ ${regular}</p>
+                    <p><b>Premium:</b> $ ${premium}</p>
+                `);
+
             //agregar el pin
 
             const marker = new L.marker([
                 parseFloat(latitude),
                 parseFloat(longitude),  //se debe pasar en ese orden
-            ]);
+            ]).bindPopup(opcionesPopUp);             //añadimos los popup
 
             //agrrgando a una capa
             this.markers.addLayer(marker);
