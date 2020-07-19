@@ -60,3 +60,10 @@ valor = 'mensaje de prueba';
 console.log(expReg.test(valor));
 
 /* se pueden evaluar los mail, para expresiones regulares, existen herramientas que te ayudan a construir tu expresion regular, con expresiones regulares se puede validar y hace tu sistema mas seguro */
+
+
+//expresion regular para email
+//ademas se debe tomar el tipo de formato si es unicode o no me refiero a acentos o ñ
+expReg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+valor = 'abcde.fghi@gmail.com';
+console.log(expReg.test(valor));
