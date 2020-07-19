@@ -3,7 +3,7 @@ class API{
         //obtner los datos
 
         //para obtener un numeros de paginas de respuesta
-        const total = 11000;
+        const total = 1000;     
         const datos = await fetch(`https://api.datos.gob.mx/v1/precio.gasolina.publico?pageSize=${total}`);
 
         //retornar los datos como json
