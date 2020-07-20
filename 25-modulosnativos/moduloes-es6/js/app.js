@@ -9,16 +9,21 @@ console.log(info); */
 /* comunicacion con modulos */
 
 /* para importar variables usamos import ademas de usar en las llaves elnombre de variable que queremos es recomendable para pocas variables */
-import{nombreCliente,ahorro} from './cliente.js';
+import{nombreCliente,ahorro,mostrarInformacion,mostrarNombre} from './cliente.js';
 
 console.log(nombreCliente);
 console.log(ahorro);
 //comunicacion entre archivos js
 
-//const info = mostrarInformacion(nombreCliente,ahorro);
-//console.log(info);
+const info = mostrarInformacion(nombreCliente,ahorro);
+console.log(info);
+
+const mostrarNombreCliente= mostrarNombre(nombreCliente);
+
+console.log(mostrarNombreCliente);
 
 //traer todo el modulo, para traer muchas variables
 
 import * as cliente from './cliente.js';
 console.log(cliente)                        //lo trae como objeto
+
