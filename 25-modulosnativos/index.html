@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aprendiendo JavaScript Moderno</h1>
+        <div id="app"></div>
+
+        <!-- QUE ES UN MODULO
+                nos permite agrupar funcionalidad relacionadaa en un mismo archivo, de esta forma nuestro codigo sera mas facil de mantener y estara mejor organizado.
+
+                la ventaja principal de un modulo es que podremos utilizarlo unicamente donde sea requerido, dejando el resto del programa oculto para el resto del codigo y tambien re/utilizar codigo
+
+            BENEFICIOS
+                permiten dividir el codigo
+
+                un modulo puede ser utilizado facilmente en otra aplicacion
+
+                dependencias
+
+                y el ahorro de variables ademas que evitan el conflicto entre variables
+        -->
+        <!-- 
+            DEPENDENCIAS
+                un modulo puede y debe estar conectado con otro modulo, esa relaci'on se conoce como dependencia.
+                si un modulo requiere una pieza de otro modulo, se dice que "depende de ese modulo" 
+
+                ejemplo bootstrap 4 requiere de jQuery.
+
+                    Jquery es una dependencia de Bootstrap por que sin el no puede funcionar
+         -->
+         <!-- 
+            EVITAN EL CONFLICTO CON EL NOMBRE DE VARIABLES
+                nos ayuda a evitar colapsos, si tenemos 2 modulos con la funcion cliente estos no van a tner un conflicto
+                ej   en la practica se usa así
+                    modulo1.cliente();
+                    modulo2.cliente();    
+          -->
+          <!-- 
+            MODULOS Y JAVAsCRIPT
+                ej   <script src="clientes.js"></script>
+                ej   <script src="ventas.js"></script>
+                ej   <script src="interfaz.js"></script>
+                
+                esta forma de usar muchos archivos js aunque es la mas comun tiene sus desventajas
+                    - cada script es un llamado HTTP lo caul hace el sitio web mas lento
+                    - Cada scipt detiene la ejecucion mientras se descarga
+                    - el manejo de las dependencias es manual: si yo tengo una funcion en el 3 archivo y esta declarada hasta el 4 voy a tner un problema.
+           -->
+           <!-- 
+               OTRAS FORMAS DE UTILIZAR MODULOS EN JS
+                se podia crear un solo archivo grande con tod el codigo, pero se hacia un problema por que cada vez que se tiene que cargar el archivo se tenia que cargar todas las lineas asi fueran 500
+
+                ReuireJS y SystemJS trabajaron con modulos en js mediante ajax pero en proyectos grandes se complicaba
+
+                otros son bundlers, preprocesadores y transpiladores: browserify, webpack y otros como gulp y grunt
+            -->
+            <!-- 
+                si bien webpack es la mejor opcion para cear modulos y bundlers, veremos como hacerlos con ES&, de forma nativa antes de probar webpack
+            -->
+
+
+        <!-- ----para linkear al app.js -->
+        <script src="67-modulosnativos.js"></script>
+        <!-- ir cambiando el src mientras cambias de segmentos -->
+</body>
+</html>
