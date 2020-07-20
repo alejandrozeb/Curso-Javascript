@@ -74,4 +74,25 @@ class UI {
         this.markers.addTo(this.mapa);
         //añadiendo al mapa
     }
+
+    //buscador
+
+    obtenerSugerencias(busqueda){
+        this.api.obtenerDatos()
+            .then(datos => {
+                //obtenr los datos
+                const resultados = datos.respuestaJSON.results;
+
+                //enviar eljson y la busqueda para el filtrado
+                this.filtrarSugerencias(resultados,busqueda);
+            })
+    }
+    //filtrando las sugerencias en base al input
+
+    fitrarSugerencias(resultado,busqueda){
+        //filtrar con .filtrer
+
+        //mostrar los pines
+    }
+
 }
