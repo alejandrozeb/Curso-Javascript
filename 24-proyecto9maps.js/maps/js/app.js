@@ -20,6 +20,8 @@ buscador.addEventListener('input',() => {
         //buscra en la api
 
         ui.obtenerSugerenvias(buscador.value);
+    }else{  //en caso que el buscador este en blanco o menor a 5
+        ui.mostrarEstablecimientos();
     }
 
 });

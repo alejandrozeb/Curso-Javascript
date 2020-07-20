@@ -88,11 +88,15 @@ class UI {
             })
     }
     //filtrando las sugerencias en base al input
-
+//PARA FILTRADO EN GENERAL
     fitrarSugerencias(resultado,busqueda){
-        //filtrar con .filtrer
+        //filtrar con .filtrer() toma un inout y extrae
 
+        const filtro = resultado.filter(filtro => filtro.calle.indexOf(busqueda) !== -1)       // el index of busca en todo la cadena de calle la variable busqueda, -1 devuelve si no encuentra el valor
+
+        console.log(filtro);
         //mostrar los pines
+        this.mostrarpines(filtro);  
     }
 
 }
