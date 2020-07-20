@@ -13,6 +13,7 @@ export const nombreCliente= 'alejandro';
 export let ahorro = 200;
 //comunicacion entre archivos js
 
+
 //para exportar funciones
 export function mostrarInformacion(nombre, ahorro){
     return `Cliente: ${nombre} - Ahorro ${ahorro}`;

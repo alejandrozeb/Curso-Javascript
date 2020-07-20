@@ -43,7 +43,7 @@ console.log(cliente2.mostrarInformacion());
 //importando otro archivo
 console.log('--------------Usando dos modulos en app----------------');
 //importando la empresa
-import{nombreEmpresa,ahorro as ahorroEmpresa, categoria,mostrarInformacion as mostrarInformacionEmpresa} from './empresa.js';
+import{nombreEmpresa,ahorro as ahorroEmpresa, categoria,mostrarInformacion as mostrarInformacionEmpresa,Empresa} from './empresa.js';
 
 console.log(nombreCliente);
 console.log(nombreEmpresa); 
@@ -63,3 +63,12 @@ const infoEmpresa = mostrarInformacionEmpresa(nombreEmpresa,ahorroEmpresa,catego
 console.log(infoEmpresa);
 
 //esa es la ventaja de los alios evita la colision de nombres entre modulos
+
+
+//usando el extends
+
+let empresa = new Empresa(nombreEmpresa,ahorroEmpresa,categoria);
+
+console.log(empresa);
+//utilizar el metodo mostrar
+console.log(empresa.mostrarInformacion());
