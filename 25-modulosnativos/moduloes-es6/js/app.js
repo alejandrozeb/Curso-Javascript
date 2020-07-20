@@ -39,3 +39,27 @@ console.log(cliente1.ahorro);
 let cliente2 = new cliente1.Cliente(cliente1.nombreCliente,cliente1.ahorro);
 console.log(cliente2);
 console.log(cliente2.mostrarInformacion());
+
+//importando otro archivo
+console.log('--------------Usando dos modulos en app----------------');
+//importando la empresa
+import{nombreEmpresa,ahorro as ahorroEmpresa, categoria,mostrarInformacion as mostrarInformacionEmpresa} from './empresa.js';
+
+console.log(nombreCliente);
+console.log(nombreEmpresa); 
+
+//sale error si no usamos el as en el import por que tienen el mismo import
+/* console.log(ahorro);
+console.log(ahorro); */
+
+console.log(ahorro);
+console.log(ahorroEmpresa);
+console.log(categoria);
+
+console.log(info);
+
+const infoEmpresa = mostrarInformacionEmpresa(nombreEmpresa,ahorroEmpresa,categoria);
+
+console.log(infoEmpresa);
+
+//esa es la ventaja de los alios evita la colision de nombres entre modulos
