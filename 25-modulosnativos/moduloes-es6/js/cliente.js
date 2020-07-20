@@ -21,3 +21,16 @@ export function mostrarInformacion(nombre, ahorro){
 export function mostrarNombre(nombre){
     return `Nombre del Cliente: ${nombre}`;
 }
+
+//exportar una clase
+
+export class Cliente{
+    constructor(nombre,ahorro){ 
+        this.nombre = nombre;
+        this.ahorro = ahorro;
+    }
+    //metodos, se pueden usar
+    mostrarInformacion(){
+        return `Cliente: ${this.nombre} - Ahorro ${this.ahorro}`;
+    }
+}
