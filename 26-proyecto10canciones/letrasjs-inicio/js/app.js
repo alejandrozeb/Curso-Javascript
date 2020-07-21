@@ -1,7 +1,8 @@
 /* aqui va toda la funcionalidad */
-
+//imortamos interfaz
 import * as UI from './interfaz.js';
-console.log(UI);
+//importamos la api 
+import {API} from './api.js';
 
 //escuchamos el submit del formulario
 
@@ -29,6 +30,13 @@ UI.formularioBuscar.addEventListener('submit',(e) => {
                 }, 3000);
           }else{
             //el formulario esta completo, realizar consulta a la API
+            const api = new API(artista,cancion);
+            api.consultarAPI()
+                .then(data => {
+                    //traemos toda la letra 
+                
+                    console.log(data.respuesta.lyrics);
+                })
           }
 
 
