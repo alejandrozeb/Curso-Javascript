@@ -35,7 +35,28 @@ UI.formularioBuscar.addEventListener('submit',(e) => {
                 .then(data => {
                     //traemos toda la letra 
                 
-                    console.log(data.respuesta.lyrics);
+                   // console.log(data);
+                    //cuando se falla la busqueda la respuesta viene no lyrics found
+
+                    if(data.respuesta.lyrics){      //si existe datos
+                       // console.log('si existe');
+
+                        //la cancion existe
+                        const letra = data.respuesta.lyrics;
+                        UI.divResultado.textContent= letra;
+                    }else{
+                        console.log('no existe');
+                        //no existe respuesta, la cancinon no exiiste
+                        UI.divMensaje.innerHTML='La cancion no existe prueba con otra busqueda';
+                        UI.divMensaje.classList.add('error');
+                        //para limpiar
+                        setTimeout(() => {
+                            UI.divMensaje.innerHTML='';
+                            UI.divMensaje.classList.remove('error'); 
+                            UI.formularioBuscar.reset(); 
+                            UI.divResultado.textContent= '';
+                        }, 3000);
+                    }
                 })
           }
 
