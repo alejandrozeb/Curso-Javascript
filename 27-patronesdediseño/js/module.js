@@ -9,11 +9,24 @@ const comprarBoleto = (function(){
     //privado
     let evento = 'Conferencia JS 2019';
     let precio = 200;
+
+    //funciones
+    
+    const adquirirBoleto = () => {
+        const elemento = document.createElement('p');
+        elemento.textContent= `Comprando boleto para: ${evento}`;
+        document.querySelector('#app').appendChild(elemento);
+
+    }
+
     //Publico
 
     return{
         mostrarBoleto: function(){
-            console.log(evento);
+
+            adquirirBoleto();       //solo el metodo estara disponible y no los elementos
+/*             console.log(evento);
+            console.log(precio);        //se muestran */ 
         }
     }
 })();
@@ -22,6 +35,8 @@ const comprarBoleto = (function(){
 
 //debemos llamar al metodo mostrarBoleto
 comprarBoleto.mostrarBoleto();
-console.log(precio);    //en el console sale, evento is not defined
+//console.log(precio);    //en el console sale, evento is not defined
 
 /* Esta la forma para poder encapsular tus datos aveces para evitar la repeticion de varibles o dar seguridad a los datos */
+
+console.log(comprarBoleto.evento); //no puede ser accedido
