@@ -1,4 +1,5 @@
 /* singleton, factory, builder esta direccionado a la creacion de objetos, Observer esta direccionado a un patron de comportamiento */
+/* El patrón Observer puede ser utilizado cuando hay objetos que dependen de otro, necesitando ser notificados en caso de que se produzca algún cambio en él. Se define un objeto global por donde pasaran los objetos */
 
 //Observer, tambien se le conoce como suscriptor-publicador
 
