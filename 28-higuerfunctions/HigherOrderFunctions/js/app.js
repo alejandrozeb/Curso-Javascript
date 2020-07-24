@@ -152,22 +152,41 @@ for(let i=0; i < autos.length; i++){
 //sintaxis (nombre del arreglo)foreach((callback(es un arrow function) o una function)), el lementos que toma el valor (auto) por convencion se recomienda que sea singular
 
 //se ejecuta una vez por cada elemento
-autos.forEach((auto)=>{
+/* autos.forEach((auto)=>{
 	console.log(auto);	//no es necesario colocar el i
-})
+}) */
 
 //creando un arreglo con los de color rojo
-let resultado = [];
+/* let resultado = [];
 autos.forEach((auto)=>{
 	if(auto.color === 'Rojo'){
 		resultado.push(auto);
 	}
-})
-console.log(resultado);
+});
+console.log(resultado); */
 
 /* el foreach se recomienda usar cuando tengas que recorrer todos los elemtnos del arreglo, listado por ejemplo*/
 
 // map
+/* es parecido al foreach con algunas diferencias */
+/* el map te retorna un arreglo nuevo con lo que tienes en el array */
+
+//el foreach no retorna valores solo los recorre
+let resultado = autos.map((auto)=>{
+	return auto;
+});
+//en los arrow functions el return viene implicito
+resultado = autos.map(auto => auto);
+//si quermos filtrar
+
+resultado = autos.map((auto)=>{
+	if(auto.marca === 'BMW'){
+	return auto;	//retorna todos los campos de array pero los que no entrar al if, son escritos como undefined(en ese caso usar filter), se usa bastante en react,
+	}
+});
+
+console.log(resultado);
+
 
 // filter
 
