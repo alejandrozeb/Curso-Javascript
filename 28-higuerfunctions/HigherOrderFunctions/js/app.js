@@ -244,5 +244,18 @@ console.log(resultadoN);
 let resultadoR = autos.reduce((total, auto) => total + auto.precio,0);
 console.log(resultadoR);
 // some
+//tiene la caracteristica que evalua cierta condicion y retorna true o false, la condiciones pueden ser usadas como filter o find
+
+let resultadoS = autos.some(auto => auto.marca === 'BMW');
+console.log(resultadoS);
+
+// si existe ferrari
+resultadoS = autos.some(auto => auto.marca === 'Ferrari');
+console.log(resultadoS);
+//precio
+
+resultadoS = autos.some(auto => auto.precio === 1000000);
+console.log(resultadoS);
 
 
+//recuerda solo devuelve si existe o no
