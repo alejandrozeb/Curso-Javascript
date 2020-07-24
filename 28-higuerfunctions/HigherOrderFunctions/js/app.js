@@ -129,7 +129,7 @@ const autos = [
 
 //si queremos listar todos los modelos anteriormente se hacia con un for 
 
-for(let i=0; i < autos.length; i++){
+/* for(let i=0; i < autos.length; i++){
 	console.log(autos[i].marca);
 }
 console.log('-------------------000-----');
@@ -144,11 +144,28 @@ for(let i=0; i < autos.length; i++){
 	if(autos[i].puertas === 4){
 		console.log(autos[i]);
 	}
-}
+} */
 
 //solo teniamos este tipo para recorrer un objeto, array u otras estructuras
-
+//higuer function hacen el codigo mas facil de leer
 // forEach
+//sintaxis (nombre del arreglo)foreach((callback(es un arrow function) o una function)), el lementos que toma el valor (auto) por convencion se recomienda que sea singular
+
+//se ejecuta una vez por cada elemento
+autos.forEach((auto)=>{
+	console.log(auto);	//no es necesario colocar el i
+})
+
+//creando un arreglo con los de color rojo
+let resultado = [];
+autos.forEach((auto)=>{
+	if(auto.color === 'Rojo'){
+		resultado.push(auto);
+	}
+})
+console.log(resultado);
+
+/* el foreach se recomienda usar cuando tengas que recorrer todos los elemtnos del arreglo, listado por ejemplo*/
 
 // map
 
