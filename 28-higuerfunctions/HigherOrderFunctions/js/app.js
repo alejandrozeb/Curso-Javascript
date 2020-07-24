@@ -236,6 +236,13 @@ console.log(resultadoF);
 //el primero que cumpla la condicion, se puede usar cuando tienes un id: que normalmente es unico
 // reduce
 
+const numeros = [1,2,3];
+let resultadoN = numeros.reduce((total,numero) => total + numero, 100);
+console.log(resultadoN);
+/* El reduce toma todos los valores y retorna un valor unico  */
+// en cada iteracion va a acumular el auto.precio, ademas el 100 o 0 es como se va a inicalizar la variable total, en caso sumas es 0 es caso de multiplicaciones es 1
+let resultadoR = autos.reduce((total, auto) => total + auto.precio,0);
+console.log(resultadoR);
 // some
 
 
