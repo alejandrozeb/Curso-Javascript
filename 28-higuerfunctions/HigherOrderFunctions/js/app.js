@@ -224,7 +224,16 @@ console.log(resultado);
 
 /* se puede aplicar con json */
 // find
+//find a diferencia del filter te retorna el primer elemnto que encuentre en el arreglo, solo devuelve un valor
 
+let resultadoF = autos.find(auto => auto.marca === 'BMW');//trae el primer bmw que encuentre
+console.log(resultadoF);
+
+//modelo mustang
+resultadoF = autos.find(auto => auto.modelo === 'Mustang');//trae el primer bmw que encuentre
+console.log(resultadoF);
+
+//el primero que cumpla la condicion, se puede usar cuando tienes un id: que normalmente es unico
 // reduce
 
 // some
