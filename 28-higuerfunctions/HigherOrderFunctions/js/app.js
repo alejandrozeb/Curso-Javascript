@@ -189,7 +189,40 @@ console.log(resultado);
 
 
 // filter
+/* tiene la cracteristica, de que crea un arreglo basada en una prueba  la sintaxis es parecida al map, igualmente te devuelve un valor*/
+resultado = autos.filter(auto => {
+	return auto.marca ==='BMW';	//la prueba es lo que vamos a revisar en el arreglo, como veras no es necesario usar el if 
+});
+/* retorna en un array solo los datos que queremos a diferencia de el map que retorna todo con undefned */
+console.log(resultado);
+//por color
 
+resultado = autos.filter(auto => auto.color ==='Rojo');
+console.log(resultado);
+
+//del año 2018
+resultado = autos.filter(auto => auto.year ===2018);
+console.log(resultado);
+// amyor a 2015
+resultado = autos.filter(auto => auto.year >2015);
+console.log(resultado);
+//por precio
+resultado = autos.filter(auto => auto.precio > 50000);
+console.log(resultado);
+//por puertas
+resultado = autos.filter(auto => auto.puertas ===2);
+console.log(resultado);
+//por transmision
+resultado = autos.filter(auto => auto.transmision === 'manual');
+console.log(resultado);
+//con dos condiciones
+resultado = autos.filter(auto => auto.year >=2015 && auto.year <= 2017);
+console.log(resultado);
+//por año y marca
+resultado = autos.filter(auto => auto.year >=2016 && auto.marca === 'BMW');
+console.log(resultado);
+
+/* se puede aplicar con json */
 // find
 
 // reduce
