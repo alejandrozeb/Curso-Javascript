@@ -191,5 +191,20 @@ function mostrarAutos(autos){
 }
 
 function filtrarAuto(){
-    console.log('desde filtrar auto');
+    //console.log('desde filtrar auto');
+    //higuer function es tomar una funcion y que su argumento sea otra funcion
+
+    const resultado = obtenerAutos().filter(filtrarMarca);   //vamos atraer tod el arreglo
+    console.log(resultado);
+
+}
+//accede a todo el arreglo por el filter y lo va comparando
+function filtrarMarca(auto){
+    if(datosBusqueda.marca){
+       // console.log(auto);
+        //console.log(datosBusqueda.marca);
+        return auto.marca === datosBusqueda.marca; //devuelve al filter para su uso
+    }{
+
+    }
 }
