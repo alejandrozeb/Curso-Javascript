@@ -138,12 +138,42 @@ function obtenerAutos(){
         ];        
 }
 
-//event listenner
+//Datos para la busqueda
+//ser aobjeto estatico donde ejecutaremos los cambios de nuetro buscador
+
+let datosBusqueda = {
+    marca: '',
+    year: '',
+    minimo: '',
+    maximo: '',
+    puertos: '',
+    transmision: '',
+    color: ''
+}
+//rescribiremos el objeto,  sus valores van a depender de nuestro buscador
+
+
+
+//event listenner DOM loaded
 const autos = obtenerAutos();
 
 document.addEventListener('DOMContentLoaded',() => {
     mostrarAutos(autos);
 });
+
+//event Listener para el formulario
+
+const marca= document.querySelector('#marca');
+marca.addEventListener('input', e => {
+    //console.log('something change');
+
+    //console.log(e.target.value);    // forma para arrow function
+    datosBusqueda.marca=e.target.value; //llenamos nuestro objeto
+
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
+
 
 function mostrarAutos(autos){
 
@@ -158,4 +188,8 @@ function mostrarAutos(autos){
         `;
         contenedor.appendChild(autoHTML);
     });
+}
+
+function filtrarAuto(){
+    console.log('desde filtrar auto');
 }
