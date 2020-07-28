@@ -220,10 +220,7 @@ color.addEventListener('input', e => {
     filtrarAuto();
 });
 
-
-
-function mostrarAutos(autos){
-
+function limpiarHTML(){
     //leer el elemnto resultado
 
     const contenedor = document.querySelector('#resultado');
@@ -232,6 +229,13 @@ function mostrarAutos(autos){
         contenedor.removeChild(contenedor.firstChild);
      }
      //remueve todos los elemntos del contenedor
+}
+
+function mostrarAutos(autos){
+    limpiarHTML();
+    //leer el elemnto resultado
+    const contenedor = document.querySelector('#resultado');
+     
     //contruir el html de los autos
     autos.forEach(auto => {
         //console.log(auto);
@@ -253,8 +257,20 @@ function filtrarAuto(){
     if(resultado.length){
         mostrarAutos(resultado);//muestra si hay resultados
     }else{
-        alert('no hay resultado');  //sale mensaje si no hay resultados
+        //alert('no hay resultado');  //sale mensaje si no hay resultados
+        noResultado();
     }
+
+}
+
+//No resultado
+function noResultado(){
+    limpiarHTML();
+
+    const noResultado = document.createElement('div');
+    noResultado.classList.add('alerta','error');//ya tiene estilos
+    noResultado.appendChild(document.createTextNode('No hay resultados'));
+    document.querySelector('#resultado').appendChild(noResultado);
 
 }
 //accede a todo el arreglo por el filter y lo va comparando
