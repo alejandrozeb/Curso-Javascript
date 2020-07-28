@@ -195,6 +195,31 @@ maximo.addEventListener('input', e => {
     //manda ññamr la funcion de filtrar autos
     filtrarAuto();
 });
+//
+const puertas= document.querySelector('#puertas');
+puertas.addEventListener('input', e => {
+    datosBusqueda.puertas=Number(e.target.value); //llenamos nuestro objeto
+
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
+//transmision
+const transmision= document.querySelector('#transmision');
+transmision.addEventListener('input', e => {
+    datosBusqueda.transmision=e.target.value; //llenamos nuestro objeto
+
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
+//color
+const color= document.querySelector('#color');
+color.addEventListener('input', e => {
+    datosBusqueda.color =e.target.value; //llenamos nuestro objeto
+
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
+
 
 
 function mostrarAutos(autos){
@@ -222,7 +247,7 @@ function filtrarAuto(){
     //console.log('desde filtrar auto');
     //higuer function es tomar una funcion y que su argumento sea otra funcion
 
-    const resultado = obtenerAutos().filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo);   //vamos atraer tod el arreglo
+    const resultado = obtenerAutos().filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo).filter(filtrarPuertas).filter(filtrarTransmision).filter(filtrarColor);   //vamos atraer tod el arreglo
     //console.log(resultado);
 
     if(resultado.length){
@@ -262,6 +287,32 @@ function filtrarMinimo(auto){
 function filtrarMaximo(auto){
     if(datosBusqueda.maximo){
         return auto.precio <= datosBusqueda.maximo; //devuelve al filter para su uso
+    }else{
+        return auto;
+    }
+}
+//filtarr puertas
+function filtrarPuertas(auto){
+    if(datosBusqueda.puertas){
+        return auto.puertas === datosBusqueda.puertas; //devuelve al filter para su uso
+    }else{
+        return auto;
+    }
+}
+
+//filtrarTransmision
+
+function filtrarTransmision(auto){
+    if(datosBusqueda.transmision){
+        return auto.transmision === datosBusqueda.transmision; //devuelve al filter para su uso
+    }else{
+        return auto;
+    }
+}
+//filtrar color
+function filtrarColor(auto){
+    if(datosBusqueda.color){
+        return auto.color === datosBusqueda.color; //devuelve al filter para su uso
     }else{
         return auto;
     }
