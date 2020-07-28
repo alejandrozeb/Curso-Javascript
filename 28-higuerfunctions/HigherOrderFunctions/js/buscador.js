@@ -181,6 +181,20 @@ year.addEventListener('input', e => {
     //manda ññamr la funcion de filtrar autos
     filtrarAuto();
 });
+//minimo
+const minimo= document.querySelector('#minimo');
+minimo.addEventListener('input', e => {
+      datosBusqueda.minimo=Number(e.target.value); //llenamos nuestro objeto, ademas convertimos a numeo
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
+//maxiom
+const maximo= document.querySelector('#maximo');
+maximo.addEventListener('input', e => {
+      datosBusqueda.maximo=Number(e.target.value); //llenamos nuestro objeto, ademas convertimos a numeo
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
 
 
 function mostrarAutos(autos){
@@ -208,7 +222,7 @@ function filtrarAuto(){
     //console.log('desde filtrar auto');
     //higuer function es tomar una funcion y que su argumento sea otra funcion
 
-    const resultado = obtenerAutos().filter(filtrarMarca).filter(filtrarYear);   //vamos atraer tod el arreglo
+    const resultado = obtenerAutos().filter(filtrarMarca).filter(filtrarYear).filter(filtrarMinimo).filter(filtrarMaximo);   //vamos atraer tod el arreglo
     //console.log(resultado);
 
     if(resultado.length){
@@ -232,6 +246,22 @@ function filtrarMarca(auto){
 function filtrarYear(auto){
     if(datosBusqueda.year){
         return auto.year === datosBusqueda.year; //devuelve al filter para su uso
+    }else{
+        return auto;
+    }
+}
+//filtarr minimo
+function filtrarMinimo(auto){
+    if(datosBusqueda.minimo){
+        return auto.precio >= datosBusqueda.minimo; //devuelve al filter para su uso
+    }else{
+        return auto;
+    }
+}
+//filtarr maximo
+function filtrarMaximo(auto){
+    if(datosBusqueda.maximo){
+        return auto.precio <= datosBusqueda.maximo; //devuelve al filter para su uso
     }else{
         return auto;
     }
