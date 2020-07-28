@@ -174,12 +174,26 @@ marca.addEventListener('input', e => {
     filtrarAuto();
 });
 
+//para year
+const year= document.querySelector('#year');
+year.addEventListener('input', e => {
+      datosBusqueda.year=Number(e.target.value); //llenamos nuestro objeto, ademas convertimos a numeo
+    //manda ññamr la funcion de filtrar autos
+    filtrarAuto();
+});
+
 
 function mostrarAutos(autos){
 
     //leer el elemnto resultado
 
     const contenedor = document.querySelector('#resultado');
+    //limpiar los resultados anteriores
+     while(contenedor.firstChild){
+        contenedor.removeChild(contenedor.firstChild);
+     }
+     //remueve todos los elemntos del contenedor
+    //contruir el html de los autos
     autos.forEach(auto => {
         //console.log(auto);
         const autoHTML = document.createElement('p');
@@ -194,8 +208,14 @@ function filtrarAuto(){
     //console.log('desde filtrar auto');
     //higuer function es tomar una funcion y que su argumento sea otra funcion
 
-    const resultado = obtenerAutos().filter(filtrarMarca);   //vamos atraer tod el arreglo
-    console.log(resultado);
+    const resultado = obtenerAutos().filter(filtrarMarca).filter(filtrarYear);   //vamos atraer tod el arreglo
+    //console.log(resultado);
+
+    if(resultado.length){
+        mostrarAutos(resultado);//muestra si hay resultados
+    }else{
+        alert('no hay resultado');  //sale mensaje si no hay resultados
+    }
 
 }
 //accede a todo el arreglo por el filter y lo va comparando
@@ -204,7 +224,15 @@ function filtrarMarca(auto){
        // console.log(auto);
         //console.log(datosBusqueda.marca);
         return auto.marca === datosBusqueda.marca; //devuelve al filter para su uso
-    }{
-
+    }else{
+        return auto;    //retornamos para tener valores en el DOM
+    }
+}
+//filter para el año
+function filtrarYear(auto){
+    if(datosBusqueda.year){
+        return auto.year === datosBusqueda.year; //devuelve al filter para su uso
+    }else{
+        return auto;
     }
 }
