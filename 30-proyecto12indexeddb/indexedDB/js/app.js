@@ -52,8 +52,12 @@ document.addEventListener('DOMContentLoaded',() => {
 
         //para insertar los campos
         objectstore.createIndex('mascota','mascota',{unique:false});    //unique evita que se repita la misma informacion dos veces
+        objectstore.createIndex('cliente','cliente',{unique:false}); 
+        objectstore.createIndex('telefono','telefono',{unique:false}); 
+        objectstore.createIndex('fecha','fecha',{unique:false}); 
+        objectstore.createIndex('hora','hora',{unique:false}); 
+        objectstore.createIndex('sintomas','sintomas',{unique:false}); 
 
-
+        console.log('base de datos creada y lista');
     }
-
 });
