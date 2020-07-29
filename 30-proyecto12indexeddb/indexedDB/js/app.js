@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded',() => {
         //asignar a la base de datos global
         DB = crearDB.result;    //devuelve todo lo que tiene la DB
         //console.log(DB);
+        //mostramos todas las citas
+        mostrarCitas();
     }
 
     //este metodo solo corre una vez y es ideal para creaar el schema de la DB
@@ -99,5 +101,48 @@ document.addEventListener('DOMContentLoaded',() => {
             console.log('Hubo un error');
         }
 
+    }
+
+    //mostrar citas
+
+    function mostrarCitas(){
+        // limpiar las citas anterioeres
+
+        while(citas.firstChild){
+            citas.removeChild(citas.firstChild);
+        }
+
+        //siempre que trabajamos con db requerimos un objectstore
+        let objectStore = DB.transaction('citas').objectStore('citas');
+
+        //open course, esto retorna una peticion
+
+        // el cursor es el que va ir recorriendo los registros
+
+        objectStore.openCursor().onsuccess = function(e){
+            //el cursor se va a ubicar en el registro indicado para acceder  a lso datos
+            let cursor = e.target.result;
+            //console.log(cursor);
+            //comprobamos si existe un curso
+
+            if(cursor){
+                let citaHTML = document.createElement('li');
+                //le damos un id personalizado
+                citaHTML.setAttribute('data-cita-id', cursor.value.key);
+                citaHTML.classList.add('list-group-item');
+                citaHTML.innerHTML =`
+                    <p class="font-weight-bold"> 
+                        Mascota: <span class="font-weight-normal">
+                        ${cursor.value.mascota}
+                        </span>
+                    </p>
+                `;
+                //Append en el padre
+
+                citas.appendChild(citaHTML);
+                //pasa al siguiente campo
+                cursor.continue();
+            }
+        }
     }
 });
