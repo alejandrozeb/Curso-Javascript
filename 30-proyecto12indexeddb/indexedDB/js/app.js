@@ -28,10 +28,31 @@ document.addEventListener('DOMContentLoaded',() => {
 
     // si todo esta bien entonces muestra en consola y asifnar la base de datos
     crearDB.onsuccess = function(){
-        console.log('Todo listo!!');
+        //console.log('Todo listo!!');
         //asignar a la base de datos global
         DB = crearDB.result;    //devuelve todo lo que tiene la DB
-        console.log(DB);
+        //console.log(DB);
+    }
+
+    //este metodo solo corre una vez y es ideal para creaar el schema de la DB
+
+    crearDB.onupgradeneeded = function(e){
+        //console.log('Solo una vez');
+        //el evento que corre esta funcion es la misma que crea la base de datos
+
+        let db = e.target.result; //devuelve la base de datos(instancia)
+        //console.log(db);
+
+        // definir el objectstore, toma 2 parametros el nombre de la base de datos y segundo las opciones
+        //keypath es el indicede la base de datos
+        let objectstore = db.createObjectStore('citas',{keypath: 'key',autoIncrement: true });
+        // va a generar un id autoincrementable
+
+        //Crear los indices y campos de la base de datos, createIndex: 3 parametos, nombre, keypath  y opciones
+
+        //para insertar los campos
+        objectstore.createIndex('mascota','mascota',{unique:false});    //unique evita que se repita la misma informacion dos veces
+
 
     }
 
