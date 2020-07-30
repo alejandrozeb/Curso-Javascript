@@ -124,13 +124,13 @@ document.addEventListener('DOMContentLoaded',() => {
         objectStore.openCursor().onsuccess = function(e){
             //el cursor se va a ubicar en el registro indicado para acceder  a lso datos
             let cursor = e.target.result;
-            //console.log(cursor);
+           // console.log(cursor);
             //comprobamos si existe un curso
 
             if(cursor){
                 let citaHTML = document.createElement('li');
                 //le damos un id personalizado
-                citaHTML.setAttribute('data-cita-id', cursor.value.key);
+                citaHTML.setAttribute('data-cita-id', cursor.key);  // el key esta afuera del value
                 citaHTML.classList.add('list-group-item');
                 citaHTML.innerHTML =`
                     <p class="font-weight-bold"> 
@@ -164,6 +164,15 @@ document.addEventListener('DOMContentLoaded',() => {
                         </span>
                     </p>
                 `;
+                //creando el boton de borrar
+                const botonBorrar = document.createElement('button');
+                botonBorrar.classList.add('borrar','btn','btn-danger');
+
+                botonBorrar.innerHTML = '<span aria-hidden="true"> x </span> Borrar';
+                botonBorrar.onclick = borrarCita;   //cuando el boton sea oprimido
+                //agregando el boton
+                citaHTML.appendChild(botonBorrar);
+
                 //Append en el padre
 
                 citas.appendChild(citaHTML);
@@ -185,4 +194,12 @@ document.addEventListener('DOMContentLoaded',() => {
             }
         }
     }
+
+    //para borrar citas
+
+    function borrarCita(e){
+        //console.log(e.target.parentElement.getAttribute('data-cita-id'));   //obtenemos el id de la cita
+        let citaID= e.target.parentElement.getAttribute('data-cita-id');
+    }
+
 });
