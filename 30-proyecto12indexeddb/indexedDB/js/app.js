@@ -132,8 +132,9 @@ document.addEventListener('DOMContentLoaded',() => {
                 //le damos un id personalizado
                 citaHTML.setAttribute('data-cita-id', cursor.key);  // el key esta afuera del value
                 citaHTML.classList.add('list-group-item');
+                //creamos la vista
                 citaHTML.innerHTML =`
-                    <p class="font-weight-bold"> 
+                        <p class="font-weight-bold"> 
                         Mascota: <span class="font-weight-normal">
                         ${cursor.value.mascota}
                         </span>
@@ -199,7 +200,31 @@ document.addEventListener('DOMContentLoaded',() => {
 
     function borrarCita(e){
         //console.log(e.target.parentElement.getAttribute('data-cita-id'));   //obtenemos el id de la cita
-        let citaID= e.target.parentElement.getAttribute('data-cita-id');
+        let citaID= Number(e.target.parentElement.getAttribute('data-cita-id'));    //para enviar a la bd necesitamos que sea de tipo number
+
+        //EN INDEXEDdb se utilizan las transacciones
+        let transaction = DB.transaction(['citas'], 'readwrite');//readwrite es para escribir
+        let objectstore = transaction.objectStore('citas');//permite trabajar con la base de datos
+
+        let peticion = objectstore.delete(citaID);//Elimina con el id de la vista
+        //la transactions se completa
+        transaction.oncomplete = () => {
+            //removemos
+            e.target.parentElement.parentElement.removeChild(e.target.parentElement);
+
+            console.log(`se elimino la cita con el ID: ${citaID}`);
+            //verificamos si tiene elementos para cambiear el heading
+            if(!citas.firstChild){
+                headingAdministra.textContent = 'Agrega citas para comenzar';
+                let listado = document.createElement('p');
+                listado.classList.add('text-center');
+                listado.textContent = 'No hay registros';
+                citas.appendChild(listado);
+            }else{
+                //agrega heading si hay citas
+                headingAdministra.textContent = 'Administra tus citas';
+            }
+        }
     }
 
 });
