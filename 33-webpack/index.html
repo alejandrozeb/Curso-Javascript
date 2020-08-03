@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aprendiendo JavaScript Moderno</h1>
+        <div id="app"></div>
+
+        <!--  
+            Webpack:
+            Es una herramienta que nos ayudara con el manejo de javascript,
+
+            Webpack es un bundler (paquete) de módulos para aplicaciones JavaScript modernas. 
+            Webpack procesa la aplicacion y mapea todas las dependencias de un modulo, con esto crea uno o varios paquetes o bundlers.
+
+            Podemos ver un diagrama en webpack.png.
+            en la imagenpodemos ver archivos .js .png .jpg .hbs .css .sass que las llamaremos modules with dependencies(dependencias) y webpack ve como estan estas dependencias, las mapea y  genera una salida de estos archivos.
+
+            Javascript de forma nativa solo acepta archivos js pero con webpack podemos importar y exportar .sass .png(imagenes) y muchos otros dentro de js.
+
+            Webpack:
+            se deben conocer 4 conceptos:
+            Entry(entrada): 
+                Un punto de entrada que especifica que modulo debe utilizar webpack para comenzar a crear la grafica de dependencias, webpack se encargará de saber que depedencias tiene este módulo. de alguna forma webpack va a definir que dependencias necesita cada modulo.
+                Por lo normal el punto de entrada y la configuracion se guardan en un archivo, aunque en la versión 4 ya no es necesario.
+            Output(salida):
+                La salida le dirá a webpack, en que parte debe almacenar el bundle que se ha creado.
+
+                Normalmente la entrada esta en una carpeta llamada src/ y la salida a una carpeta llamada dist/
+            Loaders(cargadores): (mucho muy importante)
+                webpack solo entiende archivos Javasript, pero con los loaders puedes cargar otros formatos como sass, less, imagenes, html.
+
+                importar archivos css es algo que gulp o grunt no pueden hacer y que le da mucho mayor poder a webpack sobre estas herramientas.
+
+            Loaders tiene 2 palabras clave:
+                test: que le dice al archivo webpack que archivos deben ser transformados.
+                use: que le dice al archivo webpack que loader estamos utilizando para este archivo definido en el test.
+            
+
+            Plugins(complementos):  
+               Los loaders nos permiten utilizar distintos tipos de modulos y otros formatos. pero los plugins otro tipo de tareas tales como optimizar el bundle, administracion avanzada de los assets o de los archivos que usamos en el proyecto.
+
+               Un plugin se instala via NPM y se importa al archivo webpack con la palabra require().
+        
+        Para trabajar con webpack necesitaras instalar NPM y NodeJS.
+
+        Si el soporte es importante para ti, webpack no soporta IE8(internet explorer 8 ) y navegadores anteriores.
+        -->
+        <!-- ----para linkear al app.js -->
+        <script src=""></script>
+        <!-- ir cambiando el src mientras cambias de segmentos -->
+</body>
+</html>
