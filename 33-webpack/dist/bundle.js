@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -93,18 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("/* creando nuestro primer Bundle */\r\n/* en dist/main.js webpack crea codigo para manejar estos modulos en el que va incluido este */\r\nconst carrito = ['Producto 1', 'Producto 2', 'Producto 3'];\r\nconsole.log(carrito);\r\n\r\n/* el archivo main.js es nuestro primer bundle y sabemos que trabaja por que mostramos este array desde ese archivo */\r\n\r\n\r\n/* para tener mas control sobre la configuracion de webpack creamos el archivo webpack.config.js */\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ 0:
-/*!****************************!*\
-  !*** multi ./src/index.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__(/*! ./src/index.js */\"./src/index.js\");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?");
+eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nD:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\babel-loader\\\\node_modules\\\\schema-utils\\\\dist\\\\util\\\\hints.js:16\\n  const currentSchema = { ...schema\\n                          ^^^\\n\\nSyntaxError: Unexpected token ...\\n    at NativeCompileCache._moduleCompile (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:242:18)\\n    at Module._compile (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:186:36)\\n    at Object.Module._extensions..js (module.js:586:10)\\n    at Module.load (module.js:494:32)\\n    at tryModuleLoad (module.js:453:12)\\n    at Function.Module._load (module.js:445:3)\\n    at Module.require (module.js:504:17)\\n    at require (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:161:20)\\n    at Object.<anonymous> (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\babel-loader\\\\node_modules\\\\schema-utils\\\\dist\\\\ValidationError.js:11:5)\\n    at Module._compile (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:194:30)\\n    at Object.Module._extensions..js (module.js:586:10)\\n    at Module.load (module.js:494:32)\\n    at tryModuleLoad (module.js:453:12)\\n    at Function.Module._load (module.js:445:3)\\n    at Module.require (module.js:504:17)\\n    at require (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:161:20)\\n    at Object.<anonymous> (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\babel-loader\\\\node_modules\\\\schema-utils\\\\dist\\\\validate.js:14:47)\\n    at Module._compile (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:194:30)\\n    at Object.Module._extensions..js (module.js:586:10)\\n    at Module.load (module.js:494:32)\\n    at tryModuleLoad (module.js:453:12)\\n    at Function.Module._load (module.js:445:3)\\n    at Module.require (module.js:504:17)\\n    at require (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:161:20)\\n    at Object.<anonymous> (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\babel-loader\\\\node_modules\\\\schema-utils\\\\dist\\\\index.js:3:18)\\n    at Module._compile (D:\\\\Udemy\\\\courses\\\\Curso Javascript\\\\33-webpack\\\\node_modules\\\\v8-compile-cache\\\\v8-compile-cache.js:194:30)\\n    at Object.Module._extensions..js (module.js:586:10)\\n    at Module.load (module.js:494:32)\\n    at tryModuleLoad (module.js:453:12)\\n    at Function.Module._load (module.js:445:3)\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

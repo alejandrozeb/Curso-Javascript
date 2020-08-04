@@ -1,0 +1,5 @@
+//aqui especificamos la versino para que transcopile nuestro codigo
+//usaremos el preset mas generico
+{
+    "presets":["@babel/preset-env"]
+}

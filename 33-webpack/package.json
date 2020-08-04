@@ -4,11 +4,17 @@
   "description": "Archivo para aprender webpack",
   "main": "index.js",
   "scripts": {
-    "ejecutar":"webpack --mode development"  
+    "build": "webpack --mode development",
+    "watch": "webpack --w --mode development"
   },
   "author": "Alejandro Zeballos",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
