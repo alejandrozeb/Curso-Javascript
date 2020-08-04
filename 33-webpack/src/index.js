@@ -4,3 +4,6 @@ const carrito = ['Producto 1', 'Producto 2', 'Producto 3'];
 console.log(carrito);
 
 /* el archivo main.js es nuestro primer bundle y sabemos que trabaja por que mostramos este array desde ese archivo */
+
+
+/* para tener mas control sobre la configuracion de webpack creamos el archivo webpack.config.js */
