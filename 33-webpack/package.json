@@ -1,0 +1,15 @@
+{
+  "name": "33-webpack",
+  "version": "1.0.0",
+  "description": "Archivo para aprender webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejandro Zeballos",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
