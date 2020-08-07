@@ -1,1 +1,0 @@
-const cliente = (nombreCliente) => nombreCliente;
