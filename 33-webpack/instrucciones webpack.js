@@ -46,5 +46,24 @@ debemos instalar el node.sass
 npm install -g node-sass
 el -g es para que sea manera global y usarlo en otros proyectos.
 para usar  bootstrap u otro framework  ponemos en import de index.js(src/js/index.js) 
+**crearemos mas bundles.js (salidas)
+
+una de las ventajas de webpack es que se puede usar diferentes modulos:
+creamos otro archivo html llamado nosotros
+el siguiente paso es modificarl el archivo config, cambiamos las entradas y la salida
+entry: {
+        index: './src/js/index.js',
+        nosotros: './src/js/nosotros.js'
+    },
+    output:{
+        filename: '[name].bundles.js',
+        path: path.join(__dirname, '/dist')
+    },
+
+    finalmente renombramos la ruta de los scripts en las vistas(index.html,nosotros.html).
+
+    podemos crear diferentes modulos, para que no cargue el mismo codigo cada vez y tener solo un arhivo comun donde podemos agregar funcionalidades con.
+    **common Chunks***
+
 */
 
