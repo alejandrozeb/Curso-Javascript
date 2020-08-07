@@ -21,5 +21,30 @@ npm install --save-dev style-loader css-loader
 luego editamos nuestro punto de entrada(src/js/index.js) e importamos el css
 import '../css/style.css';
 algo que no podiamos hacer con js nativo 
+********INSTALAR LAS VERSIONES DEL VIDEO************
+
+**archivo sas
+se necesita el sass loader
+
+npm --save-dev sass-loader@
+existen dos formas:
+scss esta se parece a css
+sass
+y agregamos al config
+{
+                test: /\.scss$/,
+                use:[
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'sass-loader'}
+                ],
+            }
+
+y cambiamos el archivo style.css a style.scss
+
+debemos instalar el node.sass
+npm install -g node-sass
+el -g es para que sea manera global y usarlo en otros proyectos.
+para usar  bootstrap u otro framework  ponemos en import de index.js(src/js/index.js) 
 */
 
