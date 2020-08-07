@@ -64,6 +64,22 @@ entry: {
 
     podemos crear diferentes modulos, para que no cargue el mismo codigo cada vez y tener solo un arhivo comun donde podemos agregar funcionalidades con.
     **common Chunks***
+    crearemos un archivo de codigo comun, crearemos un archivo que tengo ese codigo y ptros para modulos.
+    en nuestro config añadimos otro campo al objeto llamado optimization:
+    optimization:{
+        splitChunks:{
+            cacheGroups:{
+                commons:{
+                    test: /[\\/]node_modules[\\/]/,
+                }
+            }
+        }
+    }
+    test: /[\\/]node_modules[\\/]/, es la expresion regular.
 
+    luego ejecutamos el run con el buidl
+    para que funcione en  las vistas debemos llamar al archivo common
+    <script src="dist/common.bundles.js"></script>
+    en index.html y nosotros.html.
 */
 
