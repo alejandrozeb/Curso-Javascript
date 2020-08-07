@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Cliente {\r\n    constructor(nombre){\r\n        this.nombre = nombre;\r\n    }\r\n}\r\n\r\nconst cliente = new Cliente('Juan');\r\nconsole.log(cliente);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const cliente = (nombreCliente) => nombreCliente;\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
