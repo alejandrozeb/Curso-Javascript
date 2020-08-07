@@ -81,5 +81,21 @@ entry: {
     para que funcione en  las vistas debemos llamar al archivo common
     <script src="dist/common.bundles.js"></script>
     en index.html y nosotros.html.
+    **web pack dev server****
+    es el servidor que webpack nos provee, tiene tres opciones:
+    npm install --save-dev webpack-dev-server
+     devServer: {
+        contentBase:        //desde donde va estar el servidor
+         compress:true,
+        port: 9000      //
+    }
+
+    y añadimos en nuestro config
+    "dev": "webpack-dev-server --mode development --open"
+    en la parte de script en la consola hacemos correr:
+    npm run dev 
+    y se abrirra un navegador, los archivos index.html y nosotros.html los movemos a  la carpeta dist
+
+
 */
 
