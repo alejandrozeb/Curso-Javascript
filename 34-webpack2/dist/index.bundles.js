@@ -159,7 +159,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"body {\\n  background-color: red; }\\n\\nh1 {\\n  color: white; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/style.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
+eval("exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \"#clientes {\\n  list-style: none;\\n  padding: 0; }\\n  #clientes li {\\n    padding: 1rem;\\n    font-size: 1.4rem;\\n    background-color: cornflowerblue;\\n    color: white; }\\n    #clientes li:nth-child(2n+1) {\\n      background-color: white;\\n      color: cornflowerblue; }\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./src/css/style.scss?./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js");
 
 /***/ }),
 
@@ -182,7 +182,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!../
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.scss */ \"./src/css/style.scss\");\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst clientes = ['Cliente 1', 'Cliente 2', 'Cliente 3', 'Cliente 4'];\r\n\r\n//creamos html\r\nlet html = '';\r\n\r\nclientes.forEach(cliente => {\r\n    hmtl += `\r\n        <li>${cliente}</li>\r\n    `; \r\n});\r\n\r\ndocument.querySelector('#clientes').innerHTML = html;\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.scss */ \"./src/css/style.scss\");\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst clientes = ['Cliente 1', 'Cliente 2', 'Cliente 3', 'Cliente 4','Cliente 5'];\r\n\r\n//creamos html\r\nlet html = '';\r\n\r\nclientes.forEach(cliente => {\r\n    html += `\r\n        <li>${cliente}</li>\r\n    `; \r\n});\r\n\r\ndocument.querySelector('#clientes').innerHTML = html;\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 

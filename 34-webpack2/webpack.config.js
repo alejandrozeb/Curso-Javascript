@@ -1,8 +1,8 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: {
-        index: './src/js/index.js',
-        nosotros: './src/js/nosotros.js'
+        index: './src/js/index.js'
     },
     output:{
         filename: '[name].bundles.js',
@@ -49,5 +49,17 @@ module.exports = {
                 }
             }
         }
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html',
+            title: 'Login'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'nosotros.html',
+            template: 'src/nosotros.html',
+            title: 'Nosotros'
+        })
+    ]
 }

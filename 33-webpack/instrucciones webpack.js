@@ -133,6 +133,61 @@ $secundario: white;
     }
 }
 
+*****************************************************
+Webpack para crear html
+Usamos hasta el momento doccumentos .html para crear las vistas(nosotros.html,index.html) pero webpack nos permite controlar esto con la ayuda de un plugin.
 
+npm install --save-dev html-webpack-plugin@3.2.0
+
+este plugin se complementa bien con el dev-server luego abrimos el config e importamos el plugin con la siguiente linea:
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+y en los modulos agregamos:
+    plugins: [
+        new HtmlWebpackPlugin()
+    ]
+
+luego contruimos el view con sus bundles con run:
+npm run build
+y creara los archivos necesario.
+Podemos personalizar los view y tener mas control sobre el html.
+eliminadmos el index.html de la carpeta dist,
+agregamos el index.html en el src y el config  agregamos
+
+    new HtmlWebpackPlugin({
+            filename: 'index.html', //donde se exporta
+            template: 'src/index.html'   //de donde viene el template
+        })
+
+luego usamos el build y lanzamos el server, tambien si editamos el template (serc/index.html)se realizan los cambios en la vista.
+
+i queremos cambien el tile podemos agregar:
+ new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html',
+            title: 'Login'
+        })
+al archivo de config.
+i en el title del template:
+        <title><%= htmlWebpackPlugin.options.title %></title>
+
+para que puedea realizar los cambios.
+para añadir mas de una vista
+creamos el archivo nosotros.html en nuestros templates (src/)
+y realizamos lo siguiente en el config.
+new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'src/index.html',
+            title: 'Login'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'nosotros.html',
+            template: 'src/nosotros.html',
+            title: 'Nosotros'
+        })
+y en el template index.html ceramos un a 
+<a href="nosotros.html">Ir a nosotros</a>
+para redicconar a la vista recien creada.
 */
 
