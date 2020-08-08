@@ -1,4 +1,6 @@
 //completar
+//node 6.17.1
+//npm 3.10.10
 /* watch
 Este detecta los cambios y recarga el navegador, evita que tengamos que recargar cada vez la pagina a realizar algun cambio.
 formas de uso en conosla:

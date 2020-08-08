@@ -27,10 +27,62 @@
             *<Proyecto>
                 Crearemos un cotizador de prestamos con la vresion que soporta React Hooks. aprenderemos a cargar datos de formularios, a hacer vista con condicionales.
 
+                instalamos las version de react y de npm 12:
+                react 12.18.3
+                npm 6.14.6
+
+                ademas usaremos una herramienta llamada create-eract-app, con esto no nos preocupamos por los archivos de webpak y las dependencias de react.
+                 para usarlo usamos el siguiente comando
+                 npx create-react-app prestamos
+                 tarda aproximadamente unso 5 minutos por que instalas una gran cantidad de herramientas.
+                 agregaremos una extentsin en el navegador que es muy util.
+                 abrimos extensiones de nuestro navegador y vamos al store de extenciones.
+                 buscamos React Developer Tools y los instalamos.
+                ya tenemos el proyecto prestamos creado creado con webpack, con librerias y scripts ya hechos.
+                para inicializar entramos a la carpeta prestamos y ponemos el siguiente comando.
+                npm start
+                inicializara un srvidor.
+                con host
+                y network (acesso a ip) con el cual podemos ver desde otra computadora o telefono.
+                Instalamos la extensiones de REact Snippets y React/redux/graphQl/react-native snippets para nuestro visual studio.
+                usualmente vienen dos carpetas src y public vamos a escribir nuesttro codigo es src(componentes,templates) luego react crea el codigo con bundles y te da una archivo en public.
+                ahora vamos a editar en el public nuestros estilos, con estilos que se van a usar globalmente.
+                inatalremos skelleton y normalize(para que los componentes se vean un poco mas consistentes) de cndjs.com
+                y copiaremos a nuestro index en public, podemos usar cualquier framework.
+                en la carpeta src tenemos el archivo index.js que nos servira solo para importar.
+
+                y el archivo app.js donde podemos editar nuestros componentes.
+                app.js
+                import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}
+
+export default App;
 
          -->
 
-        <script src="25-scope.js"></script>
+        
         <!-- ir cambiando el src mientras cambias de segmentos -->
 </body>
 </html>
