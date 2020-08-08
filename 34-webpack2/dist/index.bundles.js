@@ -182,7 +182,7 @@ eval("\nvar content = __webpack_require__(/*! !../../node_modules/css-loader!../
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.scss */ \"./src/css/style.scss\");\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nclass Cliente{\r\n    constructor(nombre){\r\n        this.nombre = nombre;\r\n    }\r\n}\r\n\r\nconst cliente = new Cliente('juan');\r\nconsole.log(cliente);\r\n\r\nconsole.log('Desde el incio');\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.scss */ \"./src/css/style.scss\");\n/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nconst clientes = ['Cliente 1', 'Cliente 2', 'Cliente 3', 'Cliente 4'];\r\n\r\n//creamos html\r\nlet html = '';\r\n\r\nclientes.forEach(cliente => {\r\n    hmtl += `\r\n        <li>${cliente}</li>\r\n    `; \r\n});\r\n\r\ndocument.querySelector('#clientes').innerHTML = html;\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 

@@ -96,6 +96,43 @@ entry: {
     npm run dev 
     y se abrirra un navegador, los archivos index.html y nosotros.html los movemos a  la carpeta dist
 
+    ejemplo:
+    en index html.js colocamos el siguinete codigo:
+    const clientes = ['Cliente 1', 'Cliente 2', 'Cliente 3', 'Cliente 4'];
+
+//creamos html
+let html = '';
+
+clientes.forEach(cliente => {
+    html += `
+        <li>${cliente}</li>
+    `; 
+});
+
+document.querySelector('#clientes').innerHTML = html;
+
+y ejecutamos el build y el server
+la idea de tener el sever es que se ve como se inyecta el codigo correctamente a nuestro doc.
+tambien cambiamos el archivo style.css a:
+ $primario : cornflowerblue;
+$secundario: white;
+
+#clientes{
+    list-style: none;
+    padding: 0;
+    li {
+        padding: 1rem;
+        font-size: 1.4rem;
+        background-color: $primario;
+        color: $secundario;
+        //para uno si otro no y cambiamos los colores
+        &:nth-child(2n+1){
+            background-color: $secundario;
+            color: $primario;
+        }
+    }
+}
+
 
 */
 
