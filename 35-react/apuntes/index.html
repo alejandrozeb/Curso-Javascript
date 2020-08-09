@@ -79,9 +79,35 @@ function App() {
 }
 
 export default App;
+****<proyecto</proyecto>
+reemplazamos el css por un gits: https://gist.github.com/juanpablogdl/194c15d376391a67c46dd08817bf9ae4
 
-         -->
+copiamos el index.css a index.css
+creamos una carpeta llamada componentes en nuestro src y añadimos el archivos Header.js se debe una letra mayuscula al inicio y sin espacios.
+las notas estaran en los componentes a partir de es te punto.
+asi llamamos un componente:
+<Header />
 
+en el archivo app.js
+Ventajas de un compomente es que se lo puede llamar varias veces
+        <Header />
+        <Header />
+        <Header />
+        <Header />
+si quieres mostrar un componente con diferente contenido se recorre con un foreach.
+solo podemos retornar elementos con algo que los contenga un div por ejemplo si quitamos el div no sale un error.
+
+para evitar esto usamos fragment lo importamos asi:
+import React, {Fragment} from 'react';
+y lo usamos asi:
+  <Fragment>
+        <Header />  {/* comentario asi llamamos un componente */}
+        <Header />
+        <Header />
+        <Header />
+        <Header />
+    </Fragment>
+-->
         
         <!-- ir cambiando el src mientras cambias de segmentos -->
 </body>
