@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-const  Formulario = ({cantidad,guardarCantidad}) => {
+const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
     
     //definir state cada pieza interactiva va a tener un state
    // const [cantidad, guardarCantidad] = useState(0); debemos usarlo en el padre por que lo usaremos es mas de un componente
     return ( 
         <form>
-            {cantidad}
+            {/* {cantidad}
+            {plazo} */}
           <div className="row">
               <div>
                   <label>Cantidad Prestamo</label>
@@ -20,6 +21,7 @@ const  Formulario = ({cantidad,guardarCantidad}) => {
                   <label>Plazo para Pagar</label>
                   <select 
                       className="u-full-width"
+                      onChange={e => guardarPlazo(parseInt(e.target.value))} // aqui se coloca en los select 
                   >
                       <option value="">Seleccionar</option>
                       <option value="3">3 meses</option>
