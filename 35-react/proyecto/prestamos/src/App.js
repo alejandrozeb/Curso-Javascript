@@ -1,13 +1,16 @@
 import React, {Fragment} from 'react';
 import Header from './componentes/Header';
+import Formulario from './componentes/Formulario';
 function App() {
   return (
     <Fragment>
-        <Header />  {/* comentario asi llamamos un componente */}
         <Header 
             titulo= "Cotizador de Prestamos"
-            descripcion= "Esta es una descripcion"
        />
+
+       <div className="container">
+          <Formulario />
+       </div>
     </Fragment>
   );
 }
