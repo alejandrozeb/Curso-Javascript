@@ -143,11 +143,35 @@ y lo usamos asi:
         </Fragment>
     )
 }
+export default Header;
+existe otra sintaxis para crear componentes, antes eran clases
+
+const Header = ({titulo}) => {
+    return ( 
+        <Fragment>
+            <h1>{titulo}</h1>
+        </Fragment>
+     );
+}
+
+export default Header;
+
+la diferencia es que puedes obviar el return
+const Header = ({titulo}) =>( 
+        <Fragment>
+            <h1>{titulo}</h1>
+        </Fragment>
+     );
+
+export default Header;
+bueno y cuando usamos implicit function y cuando no:
+cuando queramos solo retornar datos podemos usar el sin return por que es menos codigo
+pero si quremos leer datos, crear variables, sumar variables de la primera forma por que en la primera parte podemos escribir codigo js
+
 
 
 
 -->
-        
         <!-- ir cambiando el src mientras cambias de segmentos -->
 </body>
 </html>
