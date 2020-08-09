@@ -4,10 +4,10 @@ function App() {
   return (
     <Fragment>
         <Header />  {/* comentario asi llamamos un componente */}
-        <Header />
-        <Header />
-        <Header />
-        <Header />
+        <Header 
+            titulo= "Cotizador de Prestamos"
+            descripcion= "Esta es una descripcion"
+       />
     </Fragment>
   );
 }

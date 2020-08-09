@@ -107,6 +107,45 @@ y lo usamos asi:
         <Header />
         <Header />
     </Fragment>
+
+  En react los datos fluyen desde el principal hacia los hijos, mediante props:
+   <Header 
+            titulo= "Cotizador de Prestamos"
+       />
+       podemos ver que lo definimos como una proiedad pero pueden ser funciones, numeros cualquier tipo de dato de js.
+       podemos vre los componentes en nuestro navegador con la extension que instalamos, podemos encontrarlo en consola, more tools componentes,
+       React usa una sintaxis llamada jsx, permite mezclar html con js.
+       <p>{props.descripcion}</p>
+       entre {} se pude hacer codigo js pero si no esta en la llaves lo interpreta como html.
+    llamr a un prop
+    function Header(props){
+     //aqui podemos colocar codigo estandar de js
+     
+     console.log(props);
+
+    return(                 //es una funcion de react y lo que devolvemos es la vista
+        <Fragment>
+            <h1>{props.titulo}</h1>
+            <p>{props.descripcion}</p>
+        </Fragment>
+    )
+}
+  llamamos con destructuring
+
+  function Header({titulo}){
+     //aqui podemos colocar codigo estandar de js
+     
+     
+
+    return(                 //es una funcion de react y lo que devolvemos es la vista
+        <Fragment>
+            <h1>{titulo}</h1>
+        </Fragment>
+    )
+}
+
+
+
 -->
         
         <!-- ir cambiando el src mientras cambias de segmentos -->
