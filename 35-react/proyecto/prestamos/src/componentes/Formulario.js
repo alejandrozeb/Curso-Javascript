@@ -1,7 +1,11 @@
-import React from 'react';
-const  Formulario = () => {
+import React, {useState} from 'react';
+const  Formulario = ({cantidad,guardarCantidad}) => {
+    
+    //definir state cada pieza interactiva va a tener un state
+   // const [cantidad, guardarCantidad] = useState(0); debemos usarlo en el padre por que lo usaremos es mas de un componente
     return ( 
         <form>
+            {cantidad}
           <div className="row">
               <div>
                   <label>Cantidad Prestamo</label>
@@ -9,6 +13,7 @@ const  Formulario = () => {
                       className="u-full-width" 
                       type="number" 
                       placeholder="Ejemplo: 3000" 
+                      onChange={e => guardarCantidad(parseInt(e.target.value))}
                   />
               </div>
               <div>

@@ -180,7 +180,14 @@ app pero al crearlo en un div con class sale un es por que class es una palabra 
   <div className="container">
           <Formulario />
        </div>
-
+leyendo datos del formulario:
+usamos useState.
+ const [cantidad, guardarCantidad] = useState(0);
+ cantidad es la variable donde se va a guadar el valor, guardarCantidad es la funcion donde editaremos la variable y el usestate(es la funcion que usaremos al instanciar un evento en el campo) es de react inicializamos en 0 o '' para numeros o strings.
+ React usa evento para escuchar los cambio onchance on click,
+ el state se comunica con los cambios y la vista. para ver los cambios de manera sencilla 
+ {cantidad}//asi se llama una variable a la vista con state()
+ un hook es un state
 
 
 -->
