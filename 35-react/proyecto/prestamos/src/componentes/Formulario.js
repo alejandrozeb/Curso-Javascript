@@ -19,8 +19,9 @@ const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
 
         //eliminar el error previo
         guardarError(false);
-        calcularTotal(cantidad,plazo);
-    }
+        const total = calcularTotal(cantidad,plazo);
+        console.log(total);
+    }   
 
 
 
