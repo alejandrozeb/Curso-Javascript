@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment,useState} from 'react';
 const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
     
     //Recibiendo datos con state
@@ -12,8 +12,12 @@ const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
         //validar
         if(cantidad === 0 || plazo === ''){
             //console.log('Hay un error...');
-            guardarError(true);
+            guardarError(true);             //cambiamos el state
+            return;
         }
+
+        //eliminar el error previo
+        guardarError(false);
     }
 
 
@@ -21,7 +25,8 @@ const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
 
     //definir state cada pieza interactiva va a tener un state
    // const [cantidad, guardarCantidad] = useState(0); debemos usarlo en el padre por que lo usaremos es mas de un componente
-    return ( 
+    return (
+        <Fragment>  
         <form onSubmit={calcularPrestamo}>{/* enviamos el formulario */}
             {/* {cantidad}
             {plazo} */}
@@ -56,7 +61,10 @@ const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
                   />
               </div>
           </div>
-  </form>
+      </form>
+        {(error) ?  <p className="error">Todos los campos son obligatorios</p> : null }
+       
+  </Fragment>
      );
 }
  
