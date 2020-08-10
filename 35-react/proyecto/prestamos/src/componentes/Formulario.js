@@ -1,10 +1,28 @@
 import React, {useState} from 'react';
 const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
     
+    //Recibiendo datos con state
+    //definir state
+    const [error, guardarError] =useState(false);
+
+    //Cuando el usuario hace submit
+    const calcularPrestamo = e => {
+        e.preventDefault();
+
+        //validar
+        if(cantidad === 0 || plazo === ''){
+            //console.log('Hay un error...');
+            guardarError(true);
+        }
+    }
+
+
+
+
     //definir state cada pieza interactiva va a tener un state
    // const [cantidad, guardarCantidad] = useState(0); debemos usarlo en el padre por que lo usaremos es mas de un componente
     return ( 
-        <form>
+        <form onSubmit={calcularPrestamo}>{/* enviamos el formulario */}
             {/* {cantidad}
             {plazo} */}
           <div className="row">
