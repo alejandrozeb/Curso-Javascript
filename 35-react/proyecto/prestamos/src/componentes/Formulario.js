@@ -1,4 +1,5 @@
 import React, {Fragment,useState} from 'react';
+import {calcularTotal} from '../helpers'
 const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
     
     //Recibiendo datos con state
@@ -18,6 +19,7 @@ const  Formulario = ({cantidad,guardarCantidad,plazo,guardarPlazo}) => {
 
         //eliminar el error previo
         guardarError(false);
+        calcularTotal(cantidad,plazo);
     }
 
 
