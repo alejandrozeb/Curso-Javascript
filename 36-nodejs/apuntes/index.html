@@ -20,9 +20,23 @@
         nodemon verifica los ccambias que hagamos en el servidor, body-parser presenta informacion y express es el servidor que manejaremos localmente.
         package lock - contiene informacion de las otra dependencias pero no se tocan.
         si borramos node_modules, package-lock con npm install reinstalamos todas las dependencias esa es la ventaja de tener un package.json
-        
+        en la carpeta public vienen los archivos estaticos es decir las imagenes y los estilos(tambien libreria).
+        Tmbien creamos una llamada server donde vamos a colocar nuestros modelos, vista y archivos de configuracion.
+        en la carpeta server creamos un archivo llamado index.js se coloca donde se enlazan las vista es el archivo de configuracion.
+        node tiene la caracteritica: es la importacion por modulos con require, exports e imports:
+        para configurar const app= express(); express es juna funcion que vamos a usar y con app retenemos los datos.
+        const app= express();
+        app.use('/',(rep,res) => {      
+            res.send('Hola mundo en NodeJS');
+        });
 
-
+        app.listen(3000);       especificamos el puerte
+        luego tenemos que hacer un script para correr el servidor.
+        "start": "nodemon server"
+        añadimos a la parte de script en nuestro package.jsn nodemon escucha todos los cambios y server es la carpeta donde se aloja nustra configuracion de express.
+        request, res.
+        request temuestra una peticion y res una respuesta del servidor.
+        use hace caso a todos los verbos http como post,get,delete, get solo get.
     -->
 </body>
 </html>
