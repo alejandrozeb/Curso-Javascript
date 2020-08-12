@@ -200,6 +200,13 @@ usamos useState.
        crea un apquete optimizado para produccion
 
        si queremos subir a un sitio tradicional debemos buscar /static y retirar todas la / 
+
+       app.use((req,res,next) =>{
+         //crear una nueva fecha
+        const fecha = new Date();
+        res.locals.fechaActual = fecha.getFullYear();
+        return next();      para que pase a la siguiente
+});
 -->
         <!-- ir cambiando el src mientras cambias de segmentos -->
 </body>
