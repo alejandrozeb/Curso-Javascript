@@ -61,8 +61,20 @@
         //añadir las vistas
         app.set('views');
 
-        
+        la sintaxis de pug es sencilla 
+        h1 Inicio (como ves no necesitamos usar etiquetas).
 
+        ahora crearemos la carpeta layout donde colocaremos todos nuestros doc types sera nuestra pafina donde van script css enlaces a frameworks como bootstrap.
+
+        pug usa identacion como padres e hijos
+        ahora en otras palabras loyaut sera nuestra master page y tenemos que importar en nuestras paginas ejemplo de nostros.
+            extends ../layout/index
+            block contenido
+            h1 Nosotros
+        pero para poder usarlo en el loyauot debemos crear un block para decirle donde ira el contenido.
+
+         body
+            block contenido
 
 
     -->
