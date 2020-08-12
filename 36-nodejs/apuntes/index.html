@@ -48,7 +48,23 @@
         });
         pero guardar esto en un solo archivo desorganizara nuestro proyecto por esos usamos rutas, en la carpeta server creamos la carpeta routes y creamos index.js(index para que solo importemos la carpeta routes el index lo lee por defecto)
         const routes = require('./routes'); //usamos para importar las rutas
-        app.use('/',routes());  //usamos use para todo por que estaran de todo tipo en ese arvhivo
+        app.use('/',routes());  //usamos use para todo por que estaran de todo tipo en ese arvhivo.
+        usaremos template engines. como PUG, EJS, hbs en este caso usaremos pub.
+        para instalar pug
+        npm install --save pug
+        en server creamos otra carpeta llamda views donde colocaremos todas nuestras vistas.
+        en server creamos carpetas con index y nosotros en cada una añadimos un archivo index.pug
+        añadimos la configuracion de pug
+        //habilitar pug
+
+        app.set('view engine', 'pug');
+        //añadir las vistas
+        app.set('views');
+
+        
+
+
+
     -->
 </body>
 </html>
