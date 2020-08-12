@@ -37,6 +37,18 @@
         request, res.
         request temuestra una peticion y res una respuesta del servidor.
         use hace caso a todos los verbos http como post,get,delete, get solo get.
+        *********rutas*********
+        en todas nuetras aplicaciones vamos a tener diferentes paginas para esto se usan rutas. ejemplo en nustro index de server.
+        app.get('/',(req,res) => {
+         res.send('Inicio');
+        });
+
+        app.get('/nosotros',(req,res) => {
+        res.send('Nosotros');
+        });
+        pero guardar esto en un solo archivo desorganizara nuestro proyecto por esos usamos rutas, en la carpeta server creamos la carpeta routes y creamos index.js(index para que solo importemos la carpeta routes el index lo lee por defecto)
+        const routes = require('./routes'); //usamos para importar las rutas
+        app.use('/',routes());  //usamos use para todo por que estaran de todo tipo en ese arvhivo
     -->
 </body>
 </html>
