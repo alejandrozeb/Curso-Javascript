@@ -84,6 +84,20 @@
         en res.locals puedes agregar cualquier tipo de variable.
         usar rest local con pug 
         span= fechaActual
+        para usar el enviremetn de production o development
+        creamos la carpeta config.
+        module.exports = {
+           development: {
+        nombresitio: 'Agencia de viajes [Desarrollo]'
+        },
+        production:{
+        nombresitio: 'Agencia de viajes'
+        }   
+        }
+        y en nuetsro config usamos lo importamos y usamos lo siguientes:
+        const config = configs[app.get('env')]; //sacamos del app en si estamos en produccion o development.
+        //creamos la variable para el sitio web
+        app.locals.titulo = config.nombresitio;
 
         ***********************************************************
         Pasando las variables, a las vistas con las rutas y que solo soloo esten disponibles en este template
@@ -96,6 +110,14 @@
         forma de pasar variables a pug:
         h1= pagina
         h1 #{pagina}
+        ****<sequealize></sequealize> base de datos--
+        orm “mapear”, los ORMs tienden a “liberarnos” de la escritura o generación manual de código SQL (Structured Query Language) necesario para realizar las queries o consultas y gestionar la persistencia de datos en el RDBMS.
+        
+        es un orm de nodejs que facilita consultar, insertar, eliminar (crud) sequelize tiene soporte por sqlserver mysql sequelite.
+        tambien mongoosse que usa mongodb.
+        instalacion:
+        npm install --save mysql2@1.6.4 sequelize@4.42.0
+        y luego en server/config creamos un archivo llamado database.js
 
 
     -->
