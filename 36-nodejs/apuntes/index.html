@@ -84,6 +84,20 @@
         en res.locals puedes agregar cualquier tipo de variable.
         usar rest local con pug 
         span= fechaActual
+
+        ***********************************************************
+        Pasando las variables, a las vistas con las rutas y que solo soloo esten disponibles en este template
+        router.get('/nosotros',(req,res) => {
+        res.render('nosotros', {
+            pagina: 'Sobre Nosotros'
+        });
+
+        podemos pasar mediante la ruta, pasando con pagina.
+        forma de pasar variables a pug:
+        h1= pagina
+        h1 #{pagina}
+
+
     -->
 </body>
 </html>

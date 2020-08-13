@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const routes = require('./routes');
+const configs = require('./config');
 //configurar express
 const app= express();
 //habilitar pug
@@ -12,6 +13,11 @@ app.set('views',path.join(__dirname,'./views'));
 //caragr una carpeta estatita llamada public
 
 app.use(express.static('public'));
+
+//validar si esamos en development o produccio
+const config = configs[app.get('env')];
+//creamos la variable para el sitio web
+app.locals.titulo = config.nombresitio;
 //muestra el año actual
 app.use((req,res,next) =>{
     //crear una nueva fecha
