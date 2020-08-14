@@ -22,6 +22,6 @@ const Viaje = db.define('viaje',{
     },
     disponibles: {
         type: Sequelize.STRING
-    }
-});
+    },
+    });
 module.exports = Viaje;

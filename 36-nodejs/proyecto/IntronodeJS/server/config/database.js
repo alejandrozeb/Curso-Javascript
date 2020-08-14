@@ -4,7 +4,7 @@ module.exports = new Sequelize('agenciadeviajes', 'root', '', {
     host: '127.0.0.1',
     port: '3308',
     dialect: 'mysql',
-    defined: {
+    define: {
         timestamps: false
     },
     pool: {

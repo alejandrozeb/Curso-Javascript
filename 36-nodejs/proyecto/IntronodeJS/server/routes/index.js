@@ -14,13 +14,21 @@ module.exports = function(){
         });
     });
 
-    router.get('/viajes',(req,res) => {
+ /*    router.get('/viajes',(req,res) => {
         Viaje.findAll()
             .then(viajes => res.render('viajes', {
                 pagina: 'Proximos viajes',
-                viajes
+                //viajes
             }))
             .catch(error => console.log(error))
+    }); */
+
+    router.get('/viajes',(req,res) => {
+        Viaje.findAll()
+        .then(viajes => res.render('viajes', {
+            pagina: 'Sobre Nosotros viajes',
+            viajes
+        }));
     });
     //controlador?
     return router;
