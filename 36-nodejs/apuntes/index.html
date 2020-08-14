@@ -149,7 +149,19 @@
         module.exports = Viaje;
     creamos la vist clientes con la ayuda de routes ademas insertamos a nuestra base de datos datos para hacer pruebas.
     https://gist.github.com/juanpablogdl/d2eb7e93c22cf1b2a9c646fa1d8f293a
-    
+
+    ahora accedemos  al modelo en routes pero recuerda que los modelos siempre te devuelven un promises editamos el route de viajes.
+     router.get('/viajes',(req,res) => {
+        Viaje.findAll()
+            .then(viajes => res.render('viajes', {
+                pagina: 'Proximos viajes',
+                viajes          // viajes: viajes pero por object literal podemos escribirlo asi.
+            }))
+            .catch(error => console.log(error))
+    });
+
+    donde viajes es nuestro resultado
+
     -->
 </body>
 </html>
