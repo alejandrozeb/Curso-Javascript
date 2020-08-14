@@ -4,11 +4,11 @@ const path = require('path');
 const routes = require('./routes');
 const configs = require('./config');
 
-const db = require('./config/database');
+//const db = require('./config/database'); solo para probar lo usaremos en nuestros models
 
-db.authenticate()   //devulve un promise
+/* db.authenticate()   //devulve un promise
     .then(() => console.log('DB Conectada'))
-    .catch(error => console.log(error))
+    .catch(error => console.log(error)) */
 //configurar express
 const app= express();
 //habilitar pug

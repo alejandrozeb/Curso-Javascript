@@ -119,7 +119,34 @@
         npm install --save mysql2@1.6.4 sequelize@4.42.0
         y luego en server/config creamos un archivo llamado database.js
 
+        creamos la base de datos yo uso wamp, luego creamos la carpeta modelos, se recomienda que los nombres de esta carpeta lleven mayuscula.
+        const Sequelize = require('sequelize');
+        const db = require('../config/database');
 
+        const Viaje = db.define('viaje',{
+            titulo : {
+                type: Sequelize.STRING  //tipo de dato del campo de la bd
+            },
+            precio:{
+                type: Sequelize.STRING
+            },
+            fecha_ida: {
+                type: Sequelize.DATE
+            },
+            fecha_vuelta: {
+                type: Sequelize.DATE
+            },
+            imagen: {
+                type: Sequelize.STRING
+            },
+            descripcion: {
+                type: Sequelize.STRING
+            },
+            disponibles: {
+                type: Sequelize.STRING
+            }
+        });
+        module.exports = Viaje;
     -->
 </body>
 </html>
