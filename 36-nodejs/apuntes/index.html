@@ -163,7 +163,13 @@
     donde viajes es nuestro resultado, en el conginf de bd cambie defined por define
     ITERACIONes en pug
     each viaje in viajes 
-    viaje sale un elementos de viajes
+    viaje sale un elementos de viajes,
+
+    router.get('/viajes/:id',(req,res) => { //:id es un comodin, cualquier id que pases se mostrara la misma vista
+         res.send(req.params.id); //enviamos el id al browser
+    });
+    para saber el id 
+    res.send(req.params.id); //puedes leer el id donde te encuentres
     -->
 </body>
 </html>

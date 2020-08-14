@@ -14,21 +14,21 @@ module.exports = function(){
         });
     });
 
- /*    router.get('/viajes',(req,res) => {
-        Viaje.findAll()
-            .then(viajes => res.render('viajes', {
-                pagina: 'Proximos viajes',
-                //viajes
-            }))
-            .catch(error => console.log(error))
-    }); */
-
     router.get('/viajes',(req,res) => {
         Viaje.findAll()
         .then(viajes => res.render('viajes', {
             pagina: 'Sobre Nosotros viajes',
             viajes
-        }));
+        }))
+    });
+    //vistas id
+    router.get('/viajes/:id',(req,res) => {
+        Viaje.findById(req.params.id)
+            .then(viaje => res.render(res.render('viaje',{
+                viaje
+            })))
+            .catch(error => console.log(error))
+
     });
     //controlador?
     return router;
