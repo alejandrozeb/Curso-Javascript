@@ -12,5 +12,12 @@ module.exports = function(){
         });
     });
 
+    router.get('/viajes',(req,res) => {
+        res.render('viajes', {
+            pagina: 'Proximos viajes'
+        });
+    });
+    //controlador?
+
     return router;
 }
