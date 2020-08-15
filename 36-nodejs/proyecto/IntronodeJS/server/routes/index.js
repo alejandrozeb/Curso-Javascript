@@ -54,7 +54,14 @@ module.exports = function(){
 
         //revisar por errores
         if(errores.length > 0){
-            //muestra la vista de errores
+            //muestra la vista con errores
+            res.render('testimoniales',{
+                errores,
+                nombre,
+                correo,
+                mensaje
+            })
+
         }else{
             //almacenar en la bd
         }

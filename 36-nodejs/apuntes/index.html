@@ -186,8 +186,34 @@
     en nuestro archivo de conf imporatmos el boy parser y antes de traer las rutas usamos.
     app.use(bodyParser.urlencoded({extended: true}));
     esto habilita para podeer leer los datos con
-    console.log(req.body);  en nuestra ruta.
-    
+    console.log(req.body);  en nuestra ruta. tomar en cuenta que toma el name.
+    ejemplo de validacion de un formulario con node con express
+    let {nombre, correo, mensaje} = req.body;
+        let errores = [];
+        if(!nombre){
+            errores.push({'mensaje':'Agrega tu Nombre'})
+        }
+        if(!correo){
+            errores.push({'mensaje':'Agrega tu correo'})
+        }
+        if(!mensaje){
+            errores.push({'mensaje':'Agrega tu mensaje'})
+        }
+
+        //revisar por errores
+        if(errores.length > 0){
+            //muestra la vista de errores
+        }else{
+            //almacenar en la bd
+        }
+        nota:
+          res.render('testimoniales',{
+                errores,
+                nombre,
+                correo,
+                mensaje
+            })
+        mandamos a renderizar una nueva vista pero ya con los datos.
     -->
 </body>
 </html>
