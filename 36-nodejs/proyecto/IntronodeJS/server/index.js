@@ -1,6 +1,7 @@
 //importar express
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const routes = require('./routes');
 const configs = require('./config');
 
@@ -32,7 +33,8 @@ app.use((req,res,next) =>{
     console.log(res.locals)
     return next();
 });
-
+//ejecutamos el body parser
+app.use(bodyParser.urlencoded({extended: true}));
 
 //cargar las rutas
 app.use('/',routes());

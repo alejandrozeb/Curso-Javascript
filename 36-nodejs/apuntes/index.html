@@ -173,6 +173,21 @@
     cramos la vista de testimoniales 
      label(for="nombre") Nombre //ciando demos click en el nombre activa el form
      en testimoniales creamos el form para agregar a la bd
+
+     para envviar datos usaremos el post recargando la misma pagina.
+     router.post('/testimoniales',(req,res)=>{
+        console.log(req.body);  //devuelve undefined
+    })
+    y para enviar con el formulario hacemos:
+    form(action='/testimoniales', method="POST")
+    en nuestra vista de testimoniales.
+
+    para que evitar el undefined usamos el body-parser
+    en nuestro archivo de conf imporatmos el boy parser y antes de traer las rutas usamos.
+    app.use(bodyParser.urlencoded({extended: true}));
+    esto habilita para podeer leer los datos con
+    console.log(req.body);  en nuestra ruta.
+    
     -->
 </body>
 </html>
