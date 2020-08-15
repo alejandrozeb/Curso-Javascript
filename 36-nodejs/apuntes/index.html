@@ -214,6 +214,11 @@
                 mensaje
             })
         mandamos a renderizar una nueva vista pero ya con los datos.
+        en pug se puede usar condicionales 
+        if(errores)
+                    each error in errores
+                        .alert.alert-danger.text-center=error.mensaje
+            
     -->
 </body>
 </html>
