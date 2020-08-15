@@ -30,6 +30,13 @@ module.exports = function(){
             .catch(error => console.log(error))
 
     });
+
+    router.get('/testimoniales',(req,res) => {
+        res.render('testimoniales', {
+            pagina: 'Testimoniales'
+        });
+    });
+
     //controlador?
     return router;
 }
