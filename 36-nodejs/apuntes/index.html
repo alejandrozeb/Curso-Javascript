@@ -224,6 +224,16 @@
                 correo,
                 mensaje
             }).then(Testimonial => res.redirect('/testimoniales'))//recargamos la misma pagina
+        ****************************************
+        realizar una consulta en la base de datos
+        editamos el render de routes para que cargue la pagina
+         router.get('/testimoniales',(req,res) => {
+        Testimonial.findAll()
+            .then(testimoniales => res.render('testimoniales',{
+                pagina: 'Testimoniales',
+                testimoniales
+            }))
+    });
     -->
 </body>
 </html>
