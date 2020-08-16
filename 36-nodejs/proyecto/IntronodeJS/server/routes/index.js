@@ -7,7 +7,9 @@ const Viaje = require('../models/Viajes');
 const Testimonial = require('../models/Testimoniales');
 module.exports = function(){
     router.get('/',(req,res) => {
-        res.render('index');
+        res.render('index',{
+            clase: 'home'
+        });
     });
     
     router.get('/nosotros',(req,res) => {
