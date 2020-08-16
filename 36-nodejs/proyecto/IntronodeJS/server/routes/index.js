@@ -3,6 +3,8 @@ const router = express.Router();
 
 //importamos el modelo
 const Viaje = require('../models/Viajes');
+//importamos modelos para testimoniales
+const Testimonial = require('../models/Testimoniales');
 module.exports = function(){
     router.get('/',(req,res) => {
         res.render('index');
@@ -64,6 +66,13 @@ module.exports = function(){
 
         }else{
             //almacenar en la bd
+            Testimonial.create({
+                nombre,
+                correo,
+                mensaje
+            }).then(Testimonial => res.redirect('/testimoniales'))
+            .catch(error => console.log(error));
+
         }
         
     })

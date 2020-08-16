@@ -218,7 +218,12 @@
         if(errores)
                     each error in errores
                         .alert.alert-danger.text-center=error.mensaje
-            
+        para almacenar en la bd
+        Testimonial.create({
+                nombre,
+                correo,
+                mensaje
+            }).then(Testimonial => res.redirect('/testimoniales'))//recargamos la misma pagina
     -->
 </body>
 </html>
