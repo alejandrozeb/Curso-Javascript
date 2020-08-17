@@ -236,6 +236,25 @@
     });
     en pug podemos pasar clases para vistas especificas, si la necesitamos la pasamos con el atributo que necesitamos en caso que no solo llena con vacio
     body(class=clase)
+
+    la pagina principal 
+    router.get('/',(req,res) => {
+        Viaje.findAll({     //podemos controlar como ira el query
+            limit: 3
+        })
+        .then(viajes => res.render('index', {
+            pagina: 'Proximos viajes',
+            clase: 'home',
+            viajes
+        }))
+        .catch(error => console.log(error))
+    });
+
+    partials 
+    es parte de codigo que podemos reutilizar, como las cards de los viajes, en nuestro layout creamos la carpeta partials y creamos viajes.pug.
+    y en index o en algun donde sea necesario usaremos 
+    include y la ruta.
+    ahora al momento de realizar cambios podemos ir al partial y cambiar el codigo y como lo reutilizamos en mas de una ppagina ahorramos codigo y tiempo.
     -->
 </body>
 </html>

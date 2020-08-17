@@ -7,9 +7,15 @@ const Viaje = require('../models/Viajes');
 const Testimonial = require('../models/Testimoniales');
 module.exports = function(){
     router.get('/',(req,res) => {
-        res.render('index',{
-            clase: 'home'
-        });
+        Viaje.findAll({
+            limit: 3
+        })
+        .then(viajes => res.render('index', {
+            pagina: 'Proximos viajes',
+            clase: 'home',
+            viajes
+        }))
+        .catch(error => console.log(error))
     });
     
     router.get('/nosotros',(req,res) => {
@@ -24,6 +30,7 @@ module.exports = function(){
             pagina: 'Sobre Nosotros viajes',
             viajes
         }))
+        .catch(error => console.log(error))
     });
     //vistas id
     router.get('/viajes/:id',(req,res) => {
