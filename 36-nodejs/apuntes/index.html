@@ -255,6 +255,32 @@
     y en index o en algun donde sea necesario usaremos 
     include y la ruta.
     ahora al momento de realizar cambios podemos ir al partial y cambiar el codigo y como lo reutilizamos en mas de una ppagina ahorramos codigo y tiempo.
+    Para realizar dos consultas debemos usar promises.
+    De nuevo 
+     router.get('/',(req,res) => {
+        const promises = [];    //creamos un aarray de promises
+        promises.push(
+            Viaje.findAll({
+                limit: 3
+            })
+        )
+        promises.push(
+            Testimonial.findAll({
+                limit: 3
+            })
+        )
+        //pasar el promise y ejecutarlo
+        const resultado = Promise.all(promises) //sacamos el resultado de los promises
+        
+        resultado.then(resultado => res.render('index', {
+            pagina: 'Proximos viajes',
+            clase: 'home',
+            viajes: resultado[0],   //enviamos
+            testimoniales: resultado[1] //enviamos
+        }))
+        .catch(error => console.log(error))
+    })
+    luego lo llamamos en el index para la vista.
     -->
 </body>
 </html>
