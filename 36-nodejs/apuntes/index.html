@@ -281,6 +281,17 @@
         .catch(error => console.log(error))
     })
     luego lo llamamos en el index para la vista.
+    para resasltar la pagina actual o detectar la pagina, en nuestro archivo de configuracion del  server agreamos
+    res.locals.ruta=req.path; //retorna la ruta donde nos encontramos
+    y hacemos modificaciones en nuestro header
+    a(href="/nosotros", class="nav-link") Nosotros
+                        a(href="/viajes", class="nav-link") Viajes
+                        a(href="/testimoniales", class="nav-link") Testimoniales
+    modificamos a 
+     a.nav-link(href="/nosotros", class=(ruta === '/nosotros' ? 'active' : '')) Nosotros
+                        a.nav-link(href="/viajes", class=(ruta === '/viajes' ? 'active' : '')) Viajes
+                        a.nav-link(href="/testimoniales", class=(ruta === '/testimoniales' ? 'active' : '')) Testimoniales
+    donde usamos un if ternario
     -->
 </body>
 </html>
