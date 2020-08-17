@@ -292,6 +292,23 @@
                         a.nav-link(href="/viajes", class=(ruta === '/viajes' ? 'active' : '')) Viajes
                         a.nav-link(href="/testimoniales", class=(ruta === '/testimoniales' ? 'active' : '')) Testimoniales
     donde usamos un if ternario
+    MVC(modelos vista controlador)
+    Los modelos son aquellos que conectan con la base de datos.
+
+    La vista es todo lo visible.
+    hasta el monetos nuestro router esta siendo de controlador,
+    usualmente cada modelo tiene su controlador.
+
+    controlador de nosotros que es statico
+    exports.infoNosotros = (req,res) => {
+    res.render('nosotros', {
+        pagina: 'Sobre Nosotros'
+    });
+}
+    y en routes lo imporatmos y editamos el route
+    router.get('/nosotros',nosotrosController.infoNosotros);
+
+    
     -->
 </body>
 </html>

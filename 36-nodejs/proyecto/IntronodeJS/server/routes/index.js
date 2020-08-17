@@ -5,54 +5,19 @@ const router = express.Router();
 const Viaje = require('../models/Viajes');
 //importamos modelos para testimoniales
 const Testimonial = require('../models/Testimoniales');
+
+//controladores
+const nosotrosController = require('../controllers/nosotrosController');
+const homeController = require('../controllers/homeController');
+const viajesController = require('../controllers/viajesController');
 module.exports = function(){
-    router.get('/',(req,res) => {
-        const promises = [];
-        promises.push(
-            Viaje.findAll({
-                limit: 3
-            })
-        )
-        promises.push(
-            Testimonial.findAll({
-                limit: 3
-            })
-        )
-        //pasar el promise y ejecutarlo
-        const resultado = Promise.all(promises)
-        
-        resultado.then(resultado => res.render('index', {
-            pagina: 'Proximos viajes',
-            clase: 'home',
-            viajes: resultado[0],
-            testimoniales: resultado[1]
-        }))
-        .catch(error => console.log(error))
-    })
+    router.get('/',homeController.consultasHomepage)
     
-    router.get('/nosotros',(req,res) => {
-        res.render('nosotros', {
-            pagina: 'Sobre Nosotros'
-        });
-    });
+    router.get('/nosotros',nosotrosController.infoNosotros);
 
-    router.get('/viajes',(req,res) => {
-        Viaje.findAll()
-        .then(viajes => res.render('viajes', {
-            pagina: 'Sobre Nosotros viajes',
-            viajes
-        }))
-        .catch(error => console.log(error))
-    });
+    router.get('/viajes',viajesController.mostrarViajes);
     //vistas id
-    router.get('/viajes/:id',(req,res) => {
-        Viaje.findById(req.params.id)
-            .then(viaje => res.render(res.render('viaje',{
-                viaje
-            })))
-            .catch(error => console.log(error))
-
-    });
+    router.get('/viajes/:id',viajesController.mostrarViaje);
 
     router.get('/testimoniales',(req,res) => {
         Testimonial.findAll()
