@@ -307,8 +307,72 @@
 }
     y en routes lo imporatmos y editamos el route
     router.get('/nosotros',nosotrosController.infoNosotros);
+    *********************************************************
+    desde la version de 8 de node soporta async await
+    ventajas
+    el codigo que da mas compacto
+    se recomienda usar aync await para interactuar con la base de datos.
 
+    los cambias se realizaran en los controladores
+
+
+    exports.mostrarViajes = (req,res) => {
+    Viaje.findAll()
+    .then(viajes => res.render('viajes', {
+        pagina: 'Sobre Nosotros viajes',
+        viajes
+    }))
+    .catch(error => console.log(error))
+}
+
+con async
+exports.mostrarViajes = async (req,res) => {
+    const viajes = await Viaje.findAll()
+    res.render('viajes', {
+        pagina: 'Sobre Nosotros viajes',
+        viajes
+    });
+}
+
+en caso de mas de una consulta.
+
+exports.consultasHomepage=(req,res) => {
+    const promises = [];
+    promises.push(
+        Viaje.findAll({
+            limit: 3
+        })
+    )
+    promises.push(
+        Testimonial.findAll({
+            limit: 3
+        })
+    )
+    //pasar el promise y ejecutarlo
+    const resultado = Promise.all(promises)
     
+    resultado.then(resultado => res.render('index', {
+        pagina: 'Proximos viajes',
+        clase: 'home',
+        viajes: resultado[0],
+        testimoniales: resultado[1]
+    }))
+    .catch(error => console.log(error))
+}
+    con async
+    exports.consultasHomepage= async(req,res) => { 
+    const viajes =  Viaje.findAll({limit: 3});
+    
+    
+    const testimoniales=Testimonial.findAll({limit: 3});
+    
+    res.render('index', {
+        pagina: 'Proximos viajes',
+        clase: 'home',
+        viajes,
+        testimoniales
+    })
+}
     -->
 </body>
 </html>
