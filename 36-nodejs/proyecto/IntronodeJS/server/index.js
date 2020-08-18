@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 const configs = require('./config');
 
+require('dotenv').config({path:'variables.env'});
+
 //const db = require('./config/database'); solo para probar lo usaremos en nuestros models
 
 /* db.authenticate()   //devulve un promise
@@ -39,4 +41,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 //cargar las rutas
 app.use('/',routes());
-app.listen(3000);
+
+
+/**puerto y host para la app */
+const host=process.env.HOST || '0.0.0.0';
+const port=process.env.PORT || 3000;
+app.listen(port,host, () => {
+    console.log('el servidor esta funcionando');
+});

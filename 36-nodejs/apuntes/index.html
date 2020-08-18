@@ -385,15 +385,43 @@ deployment
    instalamos doteenv
     npm install --save-dec dotenv
     permite generar variables de entorno lo cal y produccion
-este es el ambiente local o desarrollo
+este es el ambiente local o desarrollo creamos el archivo variables.env en la raiz del proyecto.
 BD_NOMBRE=agenciadeviajes
 BD_USER=root
 BD_PASS=''
 BD_HOST=127.0.0.1
 BD_PORT=3308
 y para produccion
+editamos en el config
 
+const Sequelize = require('sequelize'); //importamos
+require('dotenv').config({path:'variables.env'});
+console.log('desde bd '+process.env.BD_PASS+'a')
+module.exports = new Sequelize(process.env.BD_NOMBRE, process.env.BD_USER, process.env.BD_PASS, {
+    host: process.env.BD_HOST,
+    port: process.env.BD_PORT,
+    dialect: 'mysql',
+    define: {
+        timestamps: false
+    },
+    pool: {
+        max: 5,
+        min: 0,
+        acquire: 30000,
+        idle: 10000
+    },
+    operatorsAliases: false
+});
 
+y en el index principal
+const host=process.env.HOST || '0.0.0.0';   // si es 0000 el servidor configurara
+const port=process.env.PORT || 3000;
+app.listen(port,host, () => {
+    console.log('el servidor esta funcionando');
+});
+editamos el package los e¡scripts
+ "dev": "nodemon server",
+    "start": "node server"
 -->
 
 
