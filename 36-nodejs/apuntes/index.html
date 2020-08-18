@@ -422,6 +422,20 @@ app.listen(port,host, () => {
 editamos el package los e¡scripts
  "dev": "nodemon server",
     "start": "node server"
+
+    seguidamente subimos al repositorio de git solo para el proyecto e ignoramos las variables de entorno y la carpeta node_modules
+    Heroku
+    Tigre.003
+    instalamos heroku
+    https://devcenter.heroku.com/articles/heroku-cli
+    para crear usamo el siguinet comando. 
+    heroku create --remote production
+    luego usamos 
+    git push production master
+
+    entramos a heroku y vemos el proyecto creado vamos a la pestaña more - view logs 
+    para ver si esta corriendo, tenemos un error por que no tenemos configurada las variables..env en nuestro repo
+
 -->
 
 
