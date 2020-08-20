@@ -435,7 +435,25 @@ editamos el package los e¡scripts
 
     entramos a heroku y vemos el proyecto creado vamos a la pestaña more - view logs 
     para ver si esta corriendo, tenemos un error por que no tenemos configurada las variables..env en nuestro repo
+    migrando base de datos.
+    Creamos un add en resoysers buscamos ClearDB MySql 
+    ahora debemos registrar un tarjeta de credito tambien puede ser de debito aunque no tenga saldo.
+    seguidamente vamos setting y click en reveal 
+    mysql://b011bb4bdaf6df:4bc5d72b@us-cdbr-east-02.cleardb.com/heroku_127466ba68276ed?reconnect=true
 
+    tenemos el usuario el pass el seervidor hasta el .net y despues el nombre de la bd.
+    para migrar usamos
+    mysqldump -u root -p agenciadeviajes > agenciadeviajes.sql
+    
+    exporta nusta bd si no reconoce el comando puedes agregarlo a la variav¡bles de entorno a tu pc o ir directamente a tu phpmyadmin y dar en la pestaña exportar
+    otra forma de ingresar a los datos de la bd desde consola.
+    heroku config | grep CLEARDB_DATABASE_URL  
+
+    cmd /c 'mysql -u b011bb4bdaf6df -h us-cdbr-east-02.cleardb.com -p heroku_127466ba68276ed < agenciadeviajes.sql'
+
+    heroku config:set DATABASE_URL='mysql://b011bb4bdaf6df:4bc5d72b@us-cdbr-east-02.cleardb.com/heroku_127466ba68276ed?reconnect=true'
+
+    4bc5d72b
 -->
 
 
