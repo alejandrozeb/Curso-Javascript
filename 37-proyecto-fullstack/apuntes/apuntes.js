@@ -180,4 +180,20 @@ al apretar send en porstman
 va a routing, detecta que es un post hacia la url, luego identifica que controlador debe ejecutarse
 nuevo cliente se abre importa el modelo
 intenata gurdar si lo hace devuelel un res caso contrario imprime el error.
+
+obtener todos lo datos de pacientes
+
+
+exports.obtenerPacientes = async(req,res,next) => { //el orden de req res y next es imporatante
+
+    try {
+        const pacientes = await Paciente.find({});  //metodo de mongosse, asigna todos los resultados-
+        //console.log(pacientes);
+        res.json(pacientes);      
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
+
 */
