@@ -92,5 +92,11 @@ module.exports = mongoose.model('Paciente', pacientesSchema);
 //moongose todo lo tiene a una sola instancias y podemos hacer referencia a paciente
 
 creando el controlador
+creamos la carpeta controler el nombre para tener orden sera (nombre)Controllerss.js
+para este proyecto sera pacienteControllers.js
 
+req es lo que el usuario envia
+res es la respuesta del servidor
+next es de express que le dice que paso a la siguiente funcion
+a los controladores e los llama en el routing y una url puede estar agragada a un controlador.
 */
