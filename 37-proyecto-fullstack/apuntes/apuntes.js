@@ -99,4 +99,21 @@ req es lo que el usuario envia
 res es la respuesta del servidor
 next es de express que le dice que paso a la siguiente funcion
 a los controladores e los llama en el routing y una url puede estar agragada a un controlador.
+
+****************routing
+Como ya tenmos el modelo y controlador tenemos que crear la ruta para estos y lo ahremos con la ayuda de express.
+
+creamos el archivo para las rutas 
+module.exports = function(){
+
+    //agrga nuevos pacientes via POST
+    router.post('/pacientes',           //el verbo le dice que hacer y especificamos la ruta
+        pacienteController.nuevoCliente
+    )
+
+    return router;
+}
+
+y agrsgamos un midelware en el index de la app
+app.use('/', routes()) 
 */
