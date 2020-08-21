@@ -140,4 +140,15 @@ ahora vamos a body y cambiamos a www.from-urlencodede
 
 y llenamos los datos que queramos toma en cuenta que la fecha es de la siguiente forma 2019-12-10.
 
+
+leer de inputs usamos bodyparser
+foamr de habilitar
+
+//habilitar el body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+con esto extraemos en una variable la peticion.
+
+cuando realizas un consolo.log en express es en el servidor por lo tanto lo vemos en la consola del servidor.
 */
