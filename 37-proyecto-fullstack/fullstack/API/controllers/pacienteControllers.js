@@ -19,7 +19,7 @@ exports.nuevoCliente = async(req, res, next) =>{
         next();                 //va a la siguiente funcion
     }
 }
-
+//obitenen todos los comentarios
 exports.obtenerPacientes = async(req,res,next) => {
 
     try {
@@ -31,3 +31,15 @@ exports.obtenerPacientes = async(req,res,next) => {
         next();
     }
 }
+//obtiene paciente por id
+exports.obtenerPaciente = async(req,res,next) => {
+
+    try {
+       const paciente = await Paciente.findById(req.params.id);
+       res.json(paciente);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
+//req.params.id encuenta /pacientes/:id devuelve lo que esta despues de dos puntos

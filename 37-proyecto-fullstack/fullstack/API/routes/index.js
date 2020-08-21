@@ -13,6 +13,12 @@ module.exports = function(){
     pacienteController.obtenerPacientes
     );
 
+    //obtiene un paciente en especifico
+    //:id trae cualquier dato /pacientes/1 o pacientes/:100000
+    router.get('/pacientes/:id', 
+    pacienteController.obtenerPaciente
+    );
+
 
     return router;
 }

@@ -196,4 +196,27 @@ exports.obtenerPacientes = async(req,res,next) => { //el orden de req res y next
     }
 }
 
+por id en routes
+ router.get('/pacientes/:id', 
+    pacienteController.obtenerPaciente
+    );
+controlador
+//obtiene paciente por id
+exports.obtenerPaciente = async(req,res,next) => {
+
+    try {
+       const paciente = await Paciente.findById(req.params.id);
+       res.json(paciente);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
+//req.params.id encuenta /pacientes/:id devuelve lo que esta despues de dos puntos
+
+los id en mongodb son raros url prueba para navegador y postman
+http://localhost:4000/pacientes/5f3f50cf94daaf2bc4e97a6c
+
+
+
 */
