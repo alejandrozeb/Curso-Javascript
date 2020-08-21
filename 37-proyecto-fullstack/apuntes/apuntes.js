@@ -116,4 +116,28 @@ module.exports = function(){
 
 y agrsgamos un midelware en el index de la app
 app.use('/', routes()) 
+
+descargamos postman para realizar peticionas estamos desarollando una restAPI.
+https://www.postman.com/downloads/
+descargamos e instalamos.
+pero que es postman? puedes encontrar una explicaicon aqui
+http://www.arquitectoit.com/postman/que-es-postman/#:~:text=Postman%20nace%20como%20una%20herramienta,una%20extensi%C3%B3n%20de%20Google%20Chrome.
+    ya con postaman abierto y abrimos una pestaña nueva, cambiamos el verbo a post y colocamos LA URL http://localhost:4000/pacientes.
+    despues damos click en send para enviar un request.
+
+nuestro server esta corriendo en el puerto 4000 pero aun no teenmso ninguna ruta definida para el get.
+No tenemos una ruta principal y sa es la idea de rest/api, tener diferentes endpoints,
+
+tambien podriamos interpretar de esta forma el routing
+ router.post('/pacientes',    http://localhost:4000/pacientes      
+        pacienteController.nuevoCliente
+    )
+es nuestro punto de entrada por asi decirlo.
+
+con postman podemos garantizar que nuestro routing y controler estan funcionando correctamente
+
+ahora vamos a body y cambiamos a www.from-urlencodede
+
+y llenamos los datos que queramos toma en cuenta que la fecha es de la siguiente forma 2019-12-10.
+
 */
