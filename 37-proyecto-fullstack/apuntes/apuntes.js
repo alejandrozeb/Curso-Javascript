@@ -151,4 +151,33 @@ app.use(bodyParser.urlencoded({extended: true}));
 con esto extraemos en una variable la peticion.
 
 cuando realizas un consolo.log en express es en el servidor por lo tanto lo vemos en la consola del servidor.
+codigo para insertar.
+en paciente controler
+const Paciente = require('../models/Paciente');
+
+
+//cuando se crea un nuevo cliente
+
+exports.nuevoCliente = async(req, res, next) =>{
+    
+    //TO DO: Insertar en la base datos
+    //console.log(req.body);
+    
+    //crear objeto de paciente con datos de req.body
+    const paciente = new Paciente(req.body);
+
+    try {
+        await paciente.save();      //metodo de express
+        res.json({mensaje: 'El cliente se agrago correctamente'});  
+    } catch (error) {
+        console.log(error);
+        next();                 //va a la siguiente funcion
+    }
+}
+ingresamos los datos cn postman dos registros diferentes
+Repaso
+al apretar send en porstman
+va a routing, detecta que es un post hacia la url, luego identifica que controlador debe ejecutarse
+nuevo cliente se abre importa el modelo
+intenata gurdar si lo hace devuelel un res caso contrario imprime el error.
 */
