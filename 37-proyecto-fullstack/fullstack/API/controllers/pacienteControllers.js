@@ -58,3 +58,15 @@ exports.actualizarPaciente = async(req,res,next) => {
         next();
     }
 }
+
+//elimina un paciente por su id
+
+exports.eliminarPaciente = async(req,res,next) => {
+    try {
+       await Paciente.findOneAndDelete({_id: req.params.id});
+       res.json({mensaje: 'el paciente fue eliminado'});
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}

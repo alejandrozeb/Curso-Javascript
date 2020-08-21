@@ -23,6 +23,9 @@ module.exports = function(){
     pacienteController.actualizarPaciente
     );
     //put permite actalizar
-
+    //elimina un paciente por su id
+    router.delete('/pacientes/:id', 
+    pacienteController.eliminarPaciente
+    );
     return router;
 }
