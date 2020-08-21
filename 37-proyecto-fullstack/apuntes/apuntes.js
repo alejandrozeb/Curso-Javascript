@@ -217,6 +217,18 @@ exports.obtenerPaciente = async(req,res,next) => {
 los id en mongodb son raros url prueba para navegador y postman
 http://localhost:4000/pacientes/5f3f50cf94daaf2bc4e97a6c
 
+para acrualizar
+exports.actualizarPaciente = async(req,res,next) => {
 
+    try {
+       const paciente = await Paciente.findOneAndUpdate({_id: req.params.id}, req.body,{
+           new: true        //trae el nuevo registro, por defecto mongoose te traeria el ultimo sin cambios
+       });
+       res.json(paciente);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
 
 */

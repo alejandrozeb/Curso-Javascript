@@ -43,3 +43,18 @@ exports.obtenerPaciente = async(req,res,next) => {
     }
 }
 //req.params.id encuenta /pacientes/:id devuelve lo que esta despues de dos puntos
+
+//actualiza un registro por su ID
+
+exports.actualizarPaciente = async(req,res,next) => {
+
+    try {
+       const paciente = await Paciente.findOneAndUpdate({_id: req.params.id}, req.body,{
+           new: true
+       });
+       res.json(paciente);
+    } catch (error) {
+        console.log(error);
+        next();
+    }
+}
