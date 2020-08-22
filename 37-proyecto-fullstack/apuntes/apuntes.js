@@ -230,7 +230,14 @@ exports.actualizarPaciente = async(req,res,next) => {
         next();
     }
 }
+ ahora crearemos el front end 
+ desde hace tiempo se esta realizando que el front y el back sean separados.
+ npx create-react-app frontend
+ espereamos a que react realize todo.
 
+https://gist.github.com/juanpablogdl/9f75be22c9fa50b6f0d7ccb63e03408c
 
+copiamos lo del index a depues del titulo
+creamos en public la carpetacss y creamos app.css y copiamos los estilos
 
 */
