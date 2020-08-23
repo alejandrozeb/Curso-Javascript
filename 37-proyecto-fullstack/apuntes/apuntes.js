@@ -292,6 +292,19 @@ const clienteAxios = axios.create({
 
 export default clienteAxios;
 
+si tienes un back end puedes hacerlo como api y leerlos en ract
+
+puedes crear apis en diferentes lenguajes e integrar en react.
+
+
+Cuando consumes apis react te da dos opciones dos HOOKS.
+
+debemos habilitar cors para conectarnos a la API, son los api keys que nos permite cnectarnos con diferentes apis.
+pero solo usaremos APis.
+
+
+
+
 
 
 */
