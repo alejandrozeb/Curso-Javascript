@@ -273,4 +273,25 @@ const Pacientes = () => {
 }
  
 export default Pacientes;
+
+Consumiremos una api nuestra y lo haremos con axios. solo cambiamos un valor y los endpoints seran actualizados, axios solo funciona el fronend.
+npm install axios
+
+definimos la url base en postman fueron a localhost podemos cambiar la base y mantenemos.
+pero se puede hace mas facil react tienen variables de entorno,
+el archivo .env.development se carga  automaticamente en desarrollo y despues de crear el build se destruye. luego podemos crear un archivo .env.production con el dominia de nuestro servidor.
+
+Cada vez que definimos una variable de entorno debemos deterner el servidor
+en nuestro config axios 
+import axios from 'axios';
+
+const clienteAxios = axios.create({
+    //definimos la url base
+    baseURL: process.env.REACT_APP_BACKEND_URL
+});
+
+export default clienteAxios;
+
+
+
 */
