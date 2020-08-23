@@ -302,6 +302,35 @@ Cuando consumes apis react te da dos opciones dos HOOKS.
 debemos habilitar cors para conectarnos a la API, son los api keys que nos permite cnectarnos con diferentes apis.
 pero solo usaremos APis.
 
+Hablitando Cors debemos haerlo en el servidor de node por lo tanto abriremos el api.
+abrimos nuestra api e instalamos cors
+npm install cors
+
+luego añadimos
+//hablilitar cors
+app.use((cors()));
+a nuestro index,.js 
+y ya se comunica con nuestro frontend
+
+CON cors puedes limitar que solo un dominio pueda consumir lainformacion.
+//Habilitar para qu el uso sea de un solo dominio
+const whitelist = ['http://localhost:3000'];
+const corsOptions= {
+    origin: (origin,callback) => {  //revisando el origen de la peticion
+        const existe = whitelist.some(dominio => dominio === origin);   //verificamos si el domino esta en la lista
+        if (existe) {
+            callback(null,true)
+        }else{
+            callback(new Error('No permitido por CORS'))
+        }
+    }
+}
+
+
+//hablilitar cors
+app.use((cors(corsOptions)));
+
+ahora en nuestro localhots sale que no esta permitido.
 
 
 
