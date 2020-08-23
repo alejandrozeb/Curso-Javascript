@@ -239,5 +239,38 @@ https://gist.github.com/juanpablogdl/9f75be22c9fa50b6f0d7ccb63e03408c
 
 copiamos lo del index a depues del titulo
 creamos en public la carpetacss y creamos app.css y copiamos los estilos
+instalamos la dependencia.
+npm install react-router-dom@5.1.2
 
+para poder usar rutas en react.
+editamos nuetros app.js
+
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+//pacientes
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+function App() {
+  return (
+    <Router>
+      <Switch>
+         <Route 
+            exact
+            path="/"        //url
+            component={Pacientes}   //el nombre del componentes que crearemos
+         />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+
+// componentes de pacientes
+import React from 'react';
+
+const Pacientes = () => {
+    return ( <h1>Desde Pacientes</h1> );
+}
+ 
+export default Pacientes;
 */
