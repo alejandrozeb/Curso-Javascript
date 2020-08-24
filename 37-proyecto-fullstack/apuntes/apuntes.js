@@ -337,5 +337,11 @@ ahora en nuestro localhots sale que no esta permitido.
     <h3>{cita.nombre}</h3>
 </a>
 
+en ract no usamos a, por velocidad usamos los que tiene react importamos en pacientes.
+import {Link} from 'react-router-dom';
+<Link to="/nueva" className="btn btn-success text-uppercase py-2 px-5 font-weight-bold">Crear Cita</Link>
+
+
+es un abstraccion de a y al transpilar se vera como la eqtiqueta a nota que camviamos el a por link y el src a to.
 
 */
