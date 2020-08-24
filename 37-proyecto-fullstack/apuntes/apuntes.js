@@ -344,4 +344,6 @@ import {Link} from 'react-router-dom';
 
 es un abstraccion de a y al transpilar se vera como la eqtiqueta a nota que camviamos el a por link y el src a to.
 
+Se recomienda guardar los daos en el state haci se puden realizar opeaciones con los datos.
+
 */

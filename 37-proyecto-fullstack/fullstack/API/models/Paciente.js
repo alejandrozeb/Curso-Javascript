@@ -17,6 +17,10 @@ const pacientesSchema = new Schema({
         type: String,      //con el date agraga la hora en la que se a registrado pero no necesitamos sa informacion
         trim: true
     },
+    telefono:{
+        type: String,
+        trim: true
+    },
     hora:{
         type: String,
         trim: true
