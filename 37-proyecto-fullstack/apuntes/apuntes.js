@@ -333,7 +333,9 @@ app.use((cors(corsOptions)));
 ahora en nuestro localhots sale que no esta permitido.
 
 
-
+<a key={cita._id}>      //en react para este tipo de bucles te pide tener un id.
+    <h3>{cita.nombre}</h3>
+</a>
 
 
 */
