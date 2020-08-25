@@ -346,4 +346,20 @@ es un abstraccion de a y al transpilar se vera como la eqtiqueta a nota que camv
 
 Se recomienda guardar los daos en el state haci se puden realizar opeaciones con los datos.
 
+como enviar los datos del formulario
+
+<form 
+                            onSubmit={crearNuevaCita}       //cuando el usuario de submit
+                            className="bg-white p-5 bordered">
+                            <div className="form-group">
+                                <label htmlFor="nombre">Nombre Mascota</label>
+                                <input 
+                                    type="text" 
+                                    className="form-control form-control-lg" 
+                                    id="nombre" 
+                                    name="nombre" 
+                                    placeholder="Nombre Mascota" 
+                                    onChange={actualizarState}
+                                />
+                            </div>
 */
