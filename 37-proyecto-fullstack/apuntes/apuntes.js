@@ -408,5 +408,33 @@ const eliminarCita = id =>{
 
 
     }
-            
+agregando sweet aleert a nuestro proyecto
+instalamos en front 
+npm install sweetalert2@9.0.2
+importamos
+import Swal from 'sweetalert2';
+
+y copiamos el componente s de la pagina
+https://sweetalert2.github.io/
+
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.value) {
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+})
+
+
+
             */

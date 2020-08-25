@@ -1,6 +1,7 @@
 import React,{Fragment} from 'react';
 import {Link,withRouter} from 'react-router-dom';
 import clienteAxios from '../config/axios';
+import Swal from 'sweetalert2';
 const Cita = (props) => {
     //al recarga nos da un error, es por que el state se vuelve a cargar y no encuentra los datos.
 
@@ -16,19 +17,37 @@ const Cita = (props) => {
     const eliminarCita = id =>{
         console.log(id);
         //importando cliente de axios y enviando la peticion
-        clienteAxios.delete(`/pacientes/${id}`)
-            .then(respuesta => {
-                //console.log(respuesta)
-                //la bd se tiene que recargar
-                props.guardarConsultar(true);
-                //redireccion
-                props.history.push('/');
-            })
-            .catch(error => {
-                console.log(error)
-            }); 
+            Swal.fire({
+                title: '¿Estas seguro?',
+                text: "una cita eliminada no se puede recuperar",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Eliminar!'
+              }).then((result) => {
+                if (result.value) {
+                    //alerta de eliminar
+                  Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
 
-
+                  //eliminando de la base de datos
+                    clienteAxios.delete(`/pacientes/${id}`)
+                    .then(respuesta => {
+                        //console.log(respuesta)
+                        //la bd se tiene que recargar
+                        props.guardarConsultar(true);
+                        //redireccion
+                        props.history.push('/');
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    }); 
+                }
+              })
     }
     return ( 
         <Fragment>
