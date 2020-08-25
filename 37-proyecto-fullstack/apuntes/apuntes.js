@@ -362,4 +362,33 @@ como enviar los datos del formulario
                                     onChange={actualizarState}
                                 />
                             </div>
-*/
+
+                            linkear con el id=  <Link to={`/cita/{cita._id}`} key={cita._id} className="p-5 list-group-item list-group-item-action flex-column align-items-start">  //asi entrelazamos.
+                                    <div className="d-flex w-100 justify-content-between mb-4">
+                                        <h3 className="mb-3">{cita.nombre}</h3>
+                                        <small className="fecha-alta">
+                                        {cita.fecha} - {cita.hora}
+                                        </small>
+                                    </div>
+                                    <p className="mb-0">
+                                        {cita.sintomas}
+                                    </p>
+                                    <div className="contacto py-3">
+                                        <p> Dueño: {cita.propietario}</p>
+                                        <p>Teléfono:</p>
+                                    </div>
+                                </Link>
+
+y tenemos en nuestro router ya el id
+exact
+            path="/cita/:id"
+            render={(props) => {
+              console.log(props.match.params.id);
+              return(
+                <Cita />
+              )
+            }}
+ahora como recoradaras ya tenemos el id en nuestro state todas las citas.                            
+            
+            
+            */
