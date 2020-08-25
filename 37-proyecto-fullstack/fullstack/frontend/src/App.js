@@ -11,24 +11,29 @@ import Cita from './components/Cita';
 
 function App() {
   //State de la aplicacion
-  const [citas, guardarCitas] = useState([]); //lo gradamos como arreglo para verificar si existe
+  const [citas, guardarCitas] = useState([]); //lo gradamos como arreglo para verificar si existec
+  const [consultar, guardarConsultar] = useState(true); // en true es que va a realizar la consulta
+
 
   useEffect( () => {
-    const consultarAPI = () =>{
-      clienteAxios.get('/pacientes')
-        .then(respuesta => {
-          //console.log(respuesta.data)
-          //pasamos la respuesta a guardarCitas
-          //colocar en el state el resultado
-          guardarCitas(respuesta.data);
-
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    } 
-    consultarAPI(); 
-  }, [] );
+    if(consultar){
+      const consultarAPI = () =>{
+        clienteAxios.get('/pacientes')
+          .then(respuesta => {
+            //console.log(respuesta.data)
+            //pasamos la respuesta a guardarCitas
+            //colocar en el state el resultado
+            guardarCitas(respuesta.data);
+            //deshabilitar la consulta
+            guardarConsultar(false);
+          })
+          .catch(error => {
+            console.log(error);
+          });
+      } 
+      consultarAPI(); 
+    }
+  }, [consultar] );     //le decimos a react que este alos cammbios
   //nuestra dependencia es que si cambia un use satate
 
   return (
@@ -42,7 +47,7 @@ function App() {
          <Route 
             exact
             path="/Nueva"
-            component={NuevaCita}
+            component={() => <NuevaCita guardarConsultar={guardarConsultar} />}
          />
          <Route 
             exact

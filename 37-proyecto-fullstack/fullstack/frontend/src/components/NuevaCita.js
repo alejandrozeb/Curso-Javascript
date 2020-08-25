@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import clienteAxios from '../config/axios';
 
 const NuevaCita = (props) => {
@@ -32,6 +32,9 @@ const NuevaCita = (props) => {
         clienteAxios.post('/pacientes', cita)   //damos la ruta y enviamos el state
             .then(respuesta => {
                 console.log(respuesta); //mensje de insertardo correctamente
+                //realizando una nueva consulta
+                props.guardarConsultar(true);
+
                 //en react tiene props llamdo history
                 props.history.push('/');    //se guarda la ultiama consulta asi que no sale la ultima insercion a la bd.
             })
@@ -129,4 +132,4 @@ const NuevaCita = (props) => {
      );
 }
  
-export default NuevaCita;
+export default withRouter(NuevaCita); //teneoms los props
