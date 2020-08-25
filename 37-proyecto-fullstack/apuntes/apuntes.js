@@ -389,6 +389,24 @@ exact
               )
             }}
 ahora como recoradaras ya tenemos el id en nuestro state todas las citas.                            
-            
+
+como eliminar una cita
+const eliminarCita = id =>{
+        console.log(id);
+        //importando cliente de axios y enviando la peticion
+        clienteAxios.delete(`/pacientes/${id}`)
+            .then(respuesta => {
+                //console.log(respuesta)
+                //la bd se tiene que recargar
+                props.guardarConsultar(true);
+                //redireccion
+                props.history.push('/');
+            })
+            .catch(error => {
+                console.log(error)
+            }); 
+
+
+    }
             
             */

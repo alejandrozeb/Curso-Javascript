@@ -1,6 +1,6 @@
 import React,{Fragment} from 'react';
 import {Link,withRouter} from 'react-router-dom';
-
+import clienteAxios from '../config/axios';
 const Cita = (props) => {
     //al recarga nos da un error, es por que el state se vuelve a cargar y no encuentra los datos.
 
@@ -10,7 +10,26 @@ const Cita = (props) => {
     }
 
     //extraer por props
-    const {cita: {nombre, propietario,fecha,hora,telefono,sintomas}} = props;
+    const {cita: {_id,nombre, propietario,fecha,hora,telefono,sintomas}} = props;
+
+    //elimina un registro
+    const eliminarCita = id =>{
+        console.log(id);
+        //importando cliente de axios y enviando la peticion
+        clienteAxios.delete(`/pacientes/${id}`)
+            .then(respuesta => {
+                //console.log(respuesta)
+                //la bd se tiene que recargar
+                props.guardarConsultar(true);
+                //redireccion
+                props.history.push('/');
+            })
+            .catch(error => {
+                console.log(error)
+            }); 
+
+
+    }
     return ( 
         <Fragment>
            <h1 className="my-5">Nombre cita: {nombre}</h1>
@@ -38,7 +57,9 @@ const Cita = (props) => {
                                 </div>
                                 <div className="d-flex">
                                     <button type="button"
-                                        className="text-uppercase py-2 px-5 font-weight-bold btn btn-danger col">
+                                        className="text-uppercase py-2 px-5 font-weight-bold btn btn-danger col"
+                                        onClick={()=> eliminarCita(_id) }
+                                        >
                                         Eliminar &times;
                                     </button>
                                 </div>
