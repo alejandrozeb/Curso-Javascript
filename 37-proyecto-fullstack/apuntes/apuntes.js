@@ -435,6 +435,29 @@ Swal.fire({
   }
 })
 
+App de escritorio
+
+ELECTRON:
+Es una tecnologia desarrollada por github
+Electron te permite crear apps de escritorio con html,css y javascript
+con una gran cantidad de componentes, electron se encarga de los componets de una app de escritorio.
+electron se encarga de la interfaz, de una app de escritorio normal asi que no tenemos que preocuparnos por eso.
+
+Utiliza CHORMIUM y node.js por lo tanto tus apps seran rapidas y podras utilizar las ultimas tecnologias
+Es open source.
+puedes crear apps para windows, mac o linux.
+Apps hechas en electron
+- ATOM
+- VS CODE
+- POSTMAN
+- DISCORD
+- MAILSPRING
+- BASECAMP
+- BOOTSTRAP STUDIO
+- CLOON DE WINDOWS 95
+- SKYPE
+- SLACK
+Es  bastante robusta.
 
 
             */
