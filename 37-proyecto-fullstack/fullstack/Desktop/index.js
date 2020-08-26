@@ -5,7 +5,18 @@ let appWindow;      //debe estar por fuera, por que electrons e encarga de la me
 function crearVentana(){
     //aqui pasamostoda la configuracion necesaria
     appWindow = new BrowserWindow({
-
+        //ajustar tamaño
+        width: 1200,
+        height: 800,
+        //no pude hacerlo mas qpequeño que es
+        //resizable: false
+        //tamaño minimo
+        minWidth: 800,
+        minHeight: 600,
+        //cuando carga simpre estara en el centro
+        center: true,
+        //carga una pantalla y luego carga la vista para evitar que vea una pantalla blanca al inicio se pone
+        show: false
     });
     //cuando la aplicacion es cerrada
     appWindow.on('closed', () => {
