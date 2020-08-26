@@ -1,0 +1,11 @@
+{
+  "name": "fullstackjs-desktop",
+  "version": "1.0.0",
+  "description": "aplicacion de electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron -"
+  },
+  "author": "Alejandro Zeballos",
+  "license": "ISC"
+}

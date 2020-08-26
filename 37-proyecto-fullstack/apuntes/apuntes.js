@@ -458,6 +458,14 @@ Apps hechas en electron
 - SKYPE
 - SLACK
 Es  bastante robusta.
+comenzamos con  crear un archivo index.js
+y ejecutamos el siguiente comando para crear el package.
+npm init.
+luego instalamos  electron
+npm i -D electron@latest    //la ultima
+npm i -D electron@7.1.0     //la que usaremos.
 
+luego cambiamos el script en package.json
+"start": "electron -"
 
             */
