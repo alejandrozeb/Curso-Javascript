@@ -496,5 +496,12 @@ electron lee el html incluido con bootstrap o algun archivo css
 nota que tenemos enlaces 
 
 tambien puedes crear tus proyectos con react o vue.js en electron
+para crear nuestra aplicacion usaremos:
+npm install --save-dev electron-builder@22.1.0
+
+en package.json usamos
+"dist": "electron-builder -w" si quieres en mac -m en linux -l
+
+
 
             */

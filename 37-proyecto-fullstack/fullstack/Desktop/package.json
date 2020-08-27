@@ -4,11 +4,13 @@
   "description": "aplicacion de electron",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder -w"
   },
   "author": "Alejandro Zeballos",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^7.1.0"
+    "electron": "^7.1.0",
+    "electron-builder": "^22.1.0"
   }
 }

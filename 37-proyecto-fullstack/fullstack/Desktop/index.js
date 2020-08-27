@@ -16,7 +16,9 @@ function crearVentana(){
         //cuando carga simpre estara en el centro
         center: true,
         //carga una pantalla y luego carga la vista para evitar que vea una pantalla blanca al inicio se pone
-        show: false
+        show: false,
+        //rl icono que se muestra en nuestra aplicaion
+        icon: 'icon.png'
     });
     //cuando la aplicacion es cerrada
     appWindow.on('closed', () => {
