@@ -502,6 +502,31 @@ npm install --save-dev electron-builder@22.1.0
 en package.json usamos
 "dist": "electron-builder -w" si quieres en mac -m en linux -l
 
+podemos crear nuestros proyectos con electron, solo instalando la libreria en nuestro proyecto.
+
+npm install --save-dev cross-env@6.0.3 electron-is-dev@1.1.0
+
+instlamos en nuestro proyecto del frontend de react.    
 
 
+concurrently    //te ayuda a realizar mas un comando
+wait-on //espera aue el servidor este listo
+electron 
+electron-builder
+typescript
+
+
+y agregamos al script
+"scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\""      //ejecutamos el react y electron con concurrently
+
+    
+  },
             */
