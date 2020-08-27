@@ -493,6 +493,8 @@ function crearVentana(){
 app.on('ready', crearVentana);//es un evento cuando todo este listo le pasamos nuestra ventana.
 
 electron lee el html incluido con bootstrap o algun archivo css
+nota que tenemos enlaces 
 
+tambien puedes crear tus proyectos con react o vue.js en electron
 
             */
